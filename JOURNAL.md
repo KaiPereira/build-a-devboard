@@ -49,7 +49,34 @@ Now that we have our power symbols in, we're going to add the decoupling. You co
 
 You'll also notice that the symbol contains less pins than the symbol the RP2040 datasheet has, this is because symbols in KiCad tend to not repeat the same pins, so they just merge like all the same VDD pins into one.
 
-But using the RP2040 datasheet as reference, we know that there's 8 IO VDD pins, so 8 0.1uF decoupling, and one 1uF cap because we're wiring the entire 3.3V line. So let's just place all those in:
+But using the RP2040 datasheet as reference, we know that there's 8 IO VDD pins, so eight 0.1uF decoupling, and one 1uF cap because we're wiring the entire 3.3V line and need to smooth out the larger ripples. So let's just place all those in!
 
+Again type "a" and search for "c" (the shorthand for capacitor). Make sure to double tap the capacitors to add a value, and make eight of them 0.1uF, and one of them 1uF.
 
+![[Pasted image 20250925102628.png]]
 
+These are the decoupling capacitors for the 3.3V line, now we need to do the caps for the 1.1V line. There's 2 VDD pins, so two, 0.1uF caps, and we need one for the line too, so a 1uF cap aswell:
+
+![[Pasted image 20250925103109.png]]
+
+Now we have all of our power decoupling. We also need to connect GND to the SoC, this is pretty self-explanatory, but it allows power to actually flow properly.
+
+![[Pasted image 20250925103224.png]]
+
+We have our power decoupling, but we don't actually have a power source yet or a way to program our devboard yet, so let's do that now. I'm going to be using USB-C because it's standard, fast and I kind of want to add a motor driver to my board for fun!
+
+So tap "a", type in whatever receptacle you want, and add it in. Make sure you pick "receptacle" and not plug because a plug would plug into your laptop instead of having a cable plug into it.
+
+![[Pasted image 20250925103733.png]]
+
+Now let's explain each of these pins:
+- SHIELD/GND will both go to ground, shield is conductive material wrapped around the data pins on the receptacle, and this just improves EMI by grounding it.
+- D+/D- are the data pins, these transfer data to/from the USB-C receptacle. You'll want to connect the D-'s and D+'s together so that they both transfer data.
+- CC1 and CC2 basically tell the receptacle to allow power to go through to power the board. These by standard (the datasheet tells you) are pulled down (go to GND) through 5.1K resistors.
+- VBUS is the 5V input, this will need to be stepped down to 3.3V to power our MCU (microcontroller)
+
+Now that we know what everything does, let's wire it up. Shield/GND go to GND:
+
+![[Pasted image 20250925105339.png]]
+
+D+ and D- are attached to their relative pair, and then will go into the MCU, but for now, we'll just have a net label going out of them. Net labels are basically like little teleporters, that allow you to say that something is wiring, without manually putting a wire between them.
