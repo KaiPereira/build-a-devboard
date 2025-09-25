@@ -19,15 +19,15 @@ ADD IMAGE HERE OF FINAL THING
 
 So enter in your schematic, and then tap "a", this will open up the symbol library, which is the place where you can find component blocks that you'll wire together to form the schematic for your project. Search for the RP2040, and just place it down in the center of your schematic.
 
-![[Pasted image 20250925070320.png]]
-![[Pasted image 20250925070335.png]]
+![Pasted image 20250925070320.png](journal/Pasted%20image%2020250925070320.png)
+![Pasted image 20250925070335.png](journal/Pasted%20image%2020250925070335.png)
 You'll notice the symbol and actual component are 2 different things if you look at the first screenshot. The symbol just tells you all the pins on the component, and how they'll be wired to what.
 
 Our entire schematic will consist of 5 main elements: power, flash storage, the crystal oscillator, I/O (input/outputs) and a surprise element you'll be challenged to add at the end! The raspberry pi datasheet explains how all of this will pretty much be wired, and I'm kind of just here to explain exactly how it all works too.
 
 So first let's talk about power!
 
-![[Pasted image 20250925071047.png]]
+![Pasted image 20250925071047.png](journal/Pasted%20image%2020250925071047.png)
 
 You'll notice that the RP2040 has capacitors, these are called decoupling capacitors. These capacitors are used for 2 main things, filtering out power supply noise and giving a local power supply if components need it at short notice. You can think of it like a stream of water, without the capacitors it can be jittery and unpredictable, but with the capacitors, the stream smoothens out, making your PCB function more reliable.
 
@@ -37,11 +37,11 @@ We're also going to put a 1uF decoupling capacitor on each power line. You'll no
 
 So go back into your schematic and then tap on the "Draw Wires" icon to connect the VREF_VOUT and DVDD, and then separately connect the IO_VDD, USB_VDD, ADC_AVDD and VREG_IN, because these pins use different voltage lines.
 
-![[Pasted image 20250925072335.png]]
+![Pasted image 20250925072335.png](journal/Pasted%20image%2020250925072335.png)
 
 Then tap "p" to open up the POWER symbol library (you can also tap a, but searching in p will be faster because there's less symbols), and search for "1V1" and "3V3" and place the 1.1V on the VREG_VOUT and DVDD, and 3.3V on the IOVDD and those other pins.
 
-![[Pasted image 20250925072502.png]]
+![Pasted image 20250925072502.png](journal/Pasted%20image%2020250925072502.png)
 
 Now schematic good practices is to always put at least a small wire between symbols like this for clarity. 
 
