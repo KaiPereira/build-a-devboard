@@ -49,7 +49,18 @@ Now that we have our power symbols in, we're going to add the decoupling. You co
 
 You'll also notice that the symbol contains less pins than the symbol the RP2040 datasheet has, this is because symbols in KiCad tend to not repeat the same pins, so they just merge like all the same VDD pins into one.
 
-But using the RP2040 datasheet as reference, we know that there's 8 IO VDD pins, so 8 0.1uF decoupling, and one 1uF cap because we're wiring the entire 3.3V line. So let's just place all those in:
+But using the RP2040 datasheet as reference, we know that there's 8 IO VDD pins, so eight 0.1uF decoupling, and one 1uF cap because we're wiring the entire 3.3V line and need to smooth out the larger ripples. So let's just place all those in!
 
+Again type "a" and search for "c" (the shorthand for capacitor). Make sure to double tap the capacitors to add a value, and make eight of them 0.1uF, and one of them 1uF.
+
+![[Pasted image 20250925102628.png]]
+
+These are the decoupling capacitors for the 3.3V line, now we need to do the caps for the 1.1V line. There's 2 VDD pins, so two, 0.1uF caps, and we need one for the line too, so a 1uF cap aswell:
+
+![[Pasted image 20250925103109.png]]
+
+Now we have all of our power decoupling. We also need to connect GND to the SoC, this is pretty self-explanatory, but it allows power to actually flow properly.
+
+![[Pasted image 20250925103224.png]]
 
 
