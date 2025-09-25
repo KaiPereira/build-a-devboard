@@ -25,7 +25,7 @@ You'll notice the symbol and actual component are 2 different things if you look
 
 Our entire schematic will consist of 5 main elements: power, flash storage, the crystal oscillator, I/O (input/outputs) and a surprise element you'll be challenged to add at the end! The raspberry pi datasheet explains how all of this will pretty much be wired, and I'm kind of just here to explain exactly how it all works too.
 
-So first let's talk about power!
+So first let's talk about power and some schematic good practices!
 
 ![Pasted image 20250925071047.png](journal/Pasted%20image%2020250925071047.png)
 
@@ -36,6 +36,8 @@ You usually want to put one 0.1uF (or 100nF, the F stands for Farads) decoupling
 We're also going to put a 1uF decoupling capacitor on each power line. You'll notice that the RP2040 has a +1V1 (1.1V) and a 3V3 (3.3V) line, we want to put a 1uF decoupling capacitor per line, to act as a larger reservoir and to smoothen out *larger* ripples that could occur. With this combination, we'll filter out nearly all the noise and have a smooth functioning PCB.
 
 So go back into your schematic and then tap on the "Draw Wires" icon to connect the VREF_VOUT and DVDD, and then separately connect the IO_VDD, USB_VDD, ADC_AVDD and VREG_IN, because these pins use different voltage lines.
+
+**Now before we go further, remember that all power labels face UPWARDS, and all ground labels face DOWNWARDS, this isn't necessary, but it's good schematic practices that you should always follow**
 
 ![Pasted image 20250925072335.png](journal/Pasted%20image%2020250925072335.png)
 
@@ -79,4 +81,37 @@ Now that we know what everything does, let's wire it up. Shield/GND go to GND:
 
 ![Pasted image 20250925105339.png](journal/Pasted%20image%2020250925105339.png)
 
-D+ and D- are attached to their relative pair, and then will go into the MCU, but for now, we'll just have a net label going out of them. Net labels are basically like little teleporters, that allow you to say that something is wiring, without manually putting a wire between them.
+D+ and D- are attached to their relative pair, and then will go into the MCU, but for now, we'll just have a global label going out of them. Global labels are basically like little teleporters, that allow you to say that something is wiring, without manually putting a wire between them. 
+
+Technically global labels are meant to be used between different schematic sheets and net labels would be the correct thing to use here, but I find global labels are cleaner if you only have one schematic for your PCB.
+
+To do this, tap global label in the right hand toolbar, type in the name for your label (USB_D+ and USB_D-), and add them to the pins:
+
+![[Pasted image 20250925160300.png]]
+Next, pulldown the CC pins through a 5.1K resistor to GND to enable power to go through the USB-C receptacle. Open up the symbol library, and then type "r" the shorthand for resistors, and then place it down and edit the value to be 5.1K:
+
+![[Pasted image 20250925160549.png]]
+
+**Remember to follow proper schematic good practices, and to have clearly visible values, and labels for your components**. Feel free to edit the text of stuff to make your schematic cleaner, just don't make stuff *too* small.
+
+Now we just need to wire in the input voltage, but the thing is, the voltage of USB-C is 5V, while the voltage that the RP2040 uses as input, needs to be 3.3V so you don't cook it. To achieve this, we'll use what's called an LDO, or a Low-Dropout Regulator to take the voltage down.
+
+Specifically, we'll be using the **NCP1117**, a classic and reliable *fixed* voltage regulator. A fixed voltage regulator is handy here, because we only need to go down to 3.3V instead of like 1.5V per say or something random, and it uses less components. We'll also be using the SOT-223 footprint (or package is the common term) because it's small and we don't really have any thermal issues with a devboard.
+
+So add in the **NCP1117-3.3_SOT223** symbol, wire GND and attach VBUS to the VI (voltage input) of the LDO.
+
+![[Pasted image 20250925161539.png]]
+
+Remember to always keep your schematic clean and feel free to use up quite a bit of space. Now like the decoupling capacitors on our RP2040, we need capacitors on the LDO. But we don't need fine decoupling capacitors for precise input lines into an MCU, and instead we need **bulk** capacitors, to handle the large voltage ripples when moving a voltage down.
+
+So we need to place two, 10uF capacitors on each side of the LDO, for input/output, so add them into your schematic:
+
+![[Pasted image 20250925161945.png]]
+
+Next, we want to add our power labels to the LDO, we'll put a VBUS label **before** the LDO/Bulk cap, and a +3V3 label to the VO (voltage out) of the LDO. We might use 5V to power some other devices so we'll want to provide a line for that too:
+
+![[Pasted image 20250925162329.png]]
+
+
+
+
