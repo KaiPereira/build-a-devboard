@@ -87,10 +87,10 @@ Technically global labels are meant to be used between different schematic sheet
 
 To do this, tap global label in the right hand toolbar, type in the name for your label (USB_D+ and USB_D-), and add them to the pins:
 
-![Pasted image 20250925160300.png](journal/Pasted%20image%2020250925160300.png)
+![[Pasted image 20250925164006.png]]
 Next, pulldown the CC pins through a 5.1K resistor to GND to enable power to go through the USB-C receptacle. Open up the symbol library, and then type "r" the shorthand for resistors, and then place it down and edit the value to be 5.1K:
 
-![Pasted image 20250925160549.png](journal/Pasted%20image%2020250925160549.png)
+![[Pasted image 20250925163923.png]]
 
 **Remember to follow proper schematic good practices, and to have clearly visible values, and labels for your components**. Feel free to edit the text of stuff to make your schematic cleaner, just don't make stuff *too* small.
 
@@ -100,17 +100,23 @@ Specifically, we'll be using the **NCP1117**, a classic and reliable *fixed* vol
 
 So add in the **NCP1117-3.3_SOT223** symbol, wire GND and attach VBUS to the VI (voltage input) of the LDO.
 
-![Pasted image 20250925161539.png](journal/Pasted%20image%2020250925161539.png)
+![[Pasted image 20250925163857.png]]
 
 Remember to always keep your schematic clean and feel free to use up quite a bit of space. Now like the decoupling capacitors on our RP2040, we need capacitors on the LDO. But we don't need fine decoupling capacitors for precise input lines into an MCU, and instead we need **bulk** capacitors, to handle the large voltage ripples when moving a voltage down.
 
 So we need to place two, 10uF capacitors on each side of the LDO, for input/output, so add them into your schematic:
 
-![Pasted image 20250925161945.png](journal/Pasted%20image%2020250925161945.png)
+![[Pasted image 20250925163830.png]]
 
-Next, we want to add our power labels to the LDO, we'll put a VBUS label **before** the LDO/Bulk cap, and a +3V3 label to the VO (voltage out) of the LDO. We might use 5V to power some other devices so we'll want to provide a line for that too:
+Next, we want to add our power labels to the LDO, we'll put a VBUS label **before** the LDO/Bulk cap, and a +3V3 label to the VO (voltage out) of the LDO. We might use 5V to power some other devices so we'll want to provide a power line for that too:
 
-![Pasted image 20250925162329.png](journal/Pasted%20image%2020250925162329.png)
+![[Pasted image 20250925163756.png]]
+
+Now to finish off the USB-C wiring, we need to make sure the MCU receives the data lines. It's standard to have these going through 27 ohm resistors into the MCU to prevent distortions of the signals at high speeds, these are called *termination resistors*.
+
+So wire the USB D+ and D- pairs into the MCU USB_DP and USB_DM (the P is for + and the M is for -):
+
+![[Pasted image 20250925164239.png]]
 
 
 
