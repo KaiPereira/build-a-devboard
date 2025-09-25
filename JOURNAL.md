@@ -63,4 +63,20 @@ Now we have all of our power decoupling. We also need to connect GND to the SoC,
 
 ![[Pasted image 20250925103224.png]]
 
+We have our power decoupling, but we don't actually have a power source yet or a way to program our devboard yet, so let's do that now. I'm going to be using USB-C because it's standard, fast and I kind of want to add a motor driver to my board for fun!
 
+So tap "a", type in whatever receptacle you want, and add it in. Make sure you pick "receptacle" and not plug because a plug would plug into your laptop instead of having a cable plug into it.
+
+![[Pasted image 20250925103733.png]]
+
+Now let's explain each of these pins:
+- SHIELD/GND will both go to ground, shield is conductive material wrapped around the data pins on the receptacle, and this just improves EMI by grounding it.
+- D+/D- are the data pins, these transfer data to/from the USB-C receptacle. You'll want to connect the D-'s and D+'s together so that they both transfer data.
+- CC1 and CC2 basically tell the receptacle to allow power to go through to power the board. These by standard (the datasheet tells you) are pulled down (go to GND) through 5.1K resistors.
+- VBUS is the 5V input, this will need to be stepped down to 3.3V to power our MCU (microcontroller)
+
+Now that we know what everything does, let's wire it up. Shield/GND go to GND:
+
+![[Pasted image 20250925105339.png]]
+
+D+ and D- are attached to their relative pair, and then will go into the MCU, but for now, we'll just have a net label going out of them. Net labels are basically like little teleporters, that allow you to say that something is wiring, without manually putting a wire between them.
