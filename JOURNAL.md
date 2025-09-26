@@ -163,7 +163,14 @@ So you usually need to have all 4 of those, and then you can add SS pins as you 
 
 ![[Pasted image 20250926090037.png]]
 
-Quad SPI uses the same CLK and CS pin, but has 4 IO pins, so it can transfer data, 4x as fast as SPI, which is ideal for flash memory.
+Quad SPI uses the same CLK and CS pin, but has 4 IO pins, so it can transfer data, 4x as fast as SPI, which is ideal for flash memory, but it does take up more pins, so that's why it's not always used. 
+
+Now you can't just attach SPI to any GPIO, you have to use what's called a hardware controller, which you can imagine, is like a little block on the RP2040 SoC that is specifically meant for SPI. There are 2 SPI controllers on the RP2040, so we're going to use them for our flash memory. You can also technically do SPI via software, but it just makes way more sense to use the actual controller provided.
+
+So add a global label to the QSPI pins with their relative name, IO's are bidirectional, and CLK and CS/SS are inputs to the slave (the flash memory) or outputs from the MCU.
+
+![[Pasted image 20250926091004.png]]
+
 
 
 
