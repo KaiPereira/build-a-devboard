@@ -144,6 +144,27 @@ Remember all your schematic good practices and make sure everything looks clean.
 
 We haven't actually seen these types of caps yet, these are called external load capacitors, and they're placed in series with the crystal I/O's, these basically just ensure that the crystal resonates at it's proper frequency, I'd suggest researching a bit more if you're interested!
 
+Now lot's of SoC's include flash storage, but the RP2040 actually doesn't, so we need to add on our own flash storage!
+
+Sadly, the RP2040 only supports up to 16mb of memory, so we'll just use a quad SPI flash memory IC (integrated circuit, those little chips on a board) like the **W25Q128JVS** used in the datasheet.
+
+Now before we actually add it to our schematic, let's talk about what SPI is. If you continue to build PCB's, you'll see this communication interface very often, it's basically just a standardized way of transferring data. The signal comes out of the master, and then goes into slave devices. The master is our MCU in this case, and the slave, is our flash memory.
+
+![[Pasted image 20250926085431.png]]
+It has 4 major pins you need to understand:
+- MOSI - Master output, slave input
+- MISO - Master input, slave output
+- SCLK - Clock signal (remember that oscillator we added to our board, this will basically do that for other devices)
+- SS/CS - Slave select, let's you choose what device you're communicating with
+
+So you usually need to have all 4 of those, and then you can add SS pins as you wish if you want to communicate with more and more devices.
+
+**But we're actually using quad SPI in this case.** 
+
+![[Pasted image 20250926090037.png]]
+
+Quad SPI uses the same CLK and CS pin, but has 4 IO pins, so it can transfer data, 4x as fast as SPI, which is ideal for flash memory.
+
 
 
 
