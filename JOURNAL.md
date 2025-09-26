@@ -171,9 +171,23 @@ So add a global label to the QSPI pins with their relative name, IO's are bidire
 
 ![[Pasted image 20250926091004.png]]
 
+Next, add in our flash memory IC (chip), **W25Q128JVS**, and wire up all the QSPI pins, and put GND to GND, and VCC to 3.3V:
 
+![[Pasted image 20250926091609.png]]
 
+Next, we need to add our 100nF/0.1uF decoupling capacitor to our VCC line to filter high-frequency noise. And then, we're going to add a button to the CS line, so that we can enter what's called BOOTSEL mode.
 
+Based off of the RP2040 datasheet, if the QSPI SS pin, see's a 0 or GND when it's booting up, it'll go into BOOTSEL, where it will appear as a USB device on our computer so that we can copy code onto it to set it up.
+
+![[Pasted image 20250926093017.png]]
+
+Now there's 2 resistors you're probably wondering about here, the pullup to 3.3V, and the one in series with the button.
+
+The pullup to 3.3V is important, because usually the QSPI pin will show up as 3.3V to the flash memory, but during bootup, you can't guarantee that it will, because the pin isn't active, so you might have some weird thing that happens with your board. The 10K resistor is just standard that the RP2040 datasheet wants us to use (and is also pretty commonly used to filter noise and stuff).
+
+The 1K resistor in series limits the amount of current that can flow in this part of the circuit to prevent damage to the CS pin.
+
+And just like that, we have our button and decoupling in, and our flash memory is completed!
 
 
 
