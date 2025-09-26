@@ -120,7 +120,7 @@ So wire the USB D+ and D- pairs into the MCU USB_DP and USB_DM (the P is for + a
 
 Now USB D+ and D- are actually what's called "bidirectional", this means that they work both ways. You don't actually need to specify this, but good schematic practices is to make sure your global labels reflect that. Currently they're just set as "inputs" because the triangle is facing inwards, so double click on all the D+ and D- labels and set them to bidirectional:
 
-![[Pasted image 20250926064330.png]]
+![Pasted image 20250926064330.png](journal/Pasted%20image%2020250926064330.png)
 
 Now to make our USB and other peripherals actually work properly, we need to have what's called a clock oscillator. This is a little piezoelectric quartz crystal that vibrates very precisely, and then it's amplified and fed into the MCU to act as a clock signal that controls the digital peripherals.
 
@@ -128,17 +128,17 @@ For example, you definitely want a crystal oscillator if you're using USB-C, bec
 
 First add the global labels to the MCU XIN and XOUT, just called their relative name. XOUT is the output from the crystal so an input to the MCU, and XIN is an output from the MCU to help the crystal oscillate properly:
 
-![[Pasted image 20250926064501.png]]
+![Pasted image 20250926064501.png](journal/Pasted%20image%2020250926064501.png)
 
 Remember to accurately represent your global label direction, but just keep in mind it doesn't actually change your schematic, it's only for whoever is reading it!
 
 Based off the RP2040 datasheet, we're going to be using a 12 MHz crystal with two, 15pF decoupling capacitors. **Make sure to use the crystal footprint with 4 pins and 1 and 3, as the input/output pins so pay attention to the symbol I use**:
 
-![[Pasted image 20250926063705.png]]
+![Pasted image 20250926063705.png](journal/Pasted%20image%2020250926063705.png)
 
 Pins 2, and 4 just go to GND, pins 1 and 3 need a 15pF cap in series, and XOUT will have a 1K resistor. This resistor is called a damping resistor and it prevents the crystal from being damaged and ensures good signal integrity:
 
-![[Pasted image 20250926064920.png]]
+![Pasted image 20250926064920.png](journal/Pasted%20image%2020250926064920.png)
 
 Remember all your schematic good practices and make sure everything looks clean.
 
