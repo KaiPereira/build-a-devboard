@@ -207,5 +207,9 @@ Next, we'll label all the other pins we haven't broken out (all the GPIO's, SWCL
 
 ![[Pasted image 20250927190319.png]]
 
+Next, we need to add the actual header pins into our schematic, you could technically do this whoever you want, but we're going to adhere to the Pi Pico standard which is a 02x18 connector on each side, and a GND every 2 or so pins, so you can just copy what I'm going to do.
+
+So, add in 2x **Conn_02x18_Odd_Even** symbols, and then just copy my labels I used:
+
 
 

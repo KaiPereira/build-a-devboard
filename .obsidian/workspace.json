@@ -169,14 +169,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "e286d62c253c0238",
+  "active": "54d5d758b7d9e42b",
   "lastOpenFiles": [
+    "PCB_DESIGN/devboard-backups/devboard-2025-09-27_192136.zip",
+    "PCB_DESIGN/devboard-backups/devboard-2025-09-27_191614.zip",
+    "PCB_DESIGN/#auto_saved_files#",
+    "PCB_DESIGN/_autosave-devboard.kicad_sch",
     "journal/Pasted image 20250927190319.png",
     "journal/Pasted image 20250927190151.png",
     "PCB_DESIGN/devboard-backups/devboard-2025-09-27_185943.zip",
-    "PCB_DESIGN/#auto_saved_files#",
     "PCB_DESIGN/#auB23E.tmp",
-    "PCB_DESIGN/_autosave-devboard.kicad_sch",
     "Pasted image 20250926093017.png",
     "PCB_DESIGN/devboard-backups/devboard-2025-09-26_092534.zip",
     "PCB_DESIGN/#auF9B3.tmp",
@@ -190,8 +192,6 @@
     "journal/Pasted image 20250926064501.png",
     "journal/Pasted image 20250926064330.png",
     "PCB_DESIGN/devboard-backups/devboard-2025-09-26_063940.zip",
-    "journal/Pasted image 20250926063705.png",
-    "PCB_DESIGN/devboard-backups/devboard-2025-09-25_164230.zip",
     "JOURNAL.md"
   ]
 }
