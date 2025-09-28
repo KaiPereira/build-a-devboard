@@ -158,7 +158,7 @@ Sadly, the RP2040 only supports up to 16mb of memory, so we'll just use a quad S
 
 Now before we actually add it to our schematic, let's talk about what SPI is. If you continue to build PCB's, you'll see this communication interface very often, it's basically just a standardized way of transferring data. The signal comes out of the master, and then goes into slave devices. The master is our MCU in this case, and the slave, is our flash memory.
 
-![[Pasted image 20250926085431.png]]
+![Pasted image 20250926085431.png](journal/Pasted%20image%2020250926085431.png)
 It has 4 major pins you need to understand:
 - MOSI - Master output, slave input
 - MISO - Master input, slave output
@@ -169,7 +169,7 @@ So you usually need to have all 4 of those, and then you can add SS pins as you 
 
 **But we're actually using quad SPI in this case.** 
 
-![[Pasted image 20250926090037.png]]
+![Pasted image 20250926090037.png](journal/Pasted%20image%2020250926090037.png)
 
 Quad SPI uses the same CLK and CS pin, but has 4 IO pins, so it can transfer data, 4x as fast as SPI, which is ideal for flash memory, but it does take up more pins, so that's why it's not always used. 
 
@@ -177,17 +177,17 @@ Now you can't just attach SPI to any GPIO, you have to use what's called a hardw
 
 So add a global label to the QSPI pins with their relative name, IO's are bidirectional, and CLK and CS/SS are inputs to the slave (the flash memory) or outputs from the MCU.
 
-![[Pasted image 20250926091004.png]]
+![Pasted image 20250926091004.png](journal/Pasted%20image%2020250926091004.png)
 
 Next, add in our flash memory IC (chip), **W25Q128JVS**, and wire up all the QSPI pins, and put GND to GND, and VCC to 3.3V:
 
-![[Pasted image 20250926091609.png]]
+![Pasted image 20250926091609.png](journal/Pasted%20image%2020250926091609.png)
 
 Next, we need to add our 100nF/0.1uF decoupling capacitor to our VCC line to filter high-frequency noise. And then, we're going to add a button to the CS line, so that we can enter what's called BOOTSEL mode.
 
 Based off of the RP2040 datasheet, if the QSPI SS pin, see's a 0 or GND when it's booting up, it'll go into BOOTSEL, where it will appear as a USB device on our computer so that we can copy code onto it to set it up.
 
-![[Pasted image 20250926093017.png]]
+![Pasted image 20250926093017.png](journal/Pasted%20image%2020250926093017.png)
 
 Now there's 2 resistors you're probably wondering about here, the pullup to 3.3V, and the one in series with the button.
 
@@ -205,15 +205,15 @@ But before we do this, let's just make sure we attach TESTEN to GND on the RP204
 
 Next, we'll label all the other pins we haven't broken out (all the GPIO's, SWCLK and SWD), with their relative name on the RP2040. These are all bidirectional pins except the SWCLK pin, which is a clock output from the SoC:
 
-![[Pasted image 20250928011101.png]]
+![Pasted image 20250928011101.png](journal/Pasted%20image%2020250928011101.png)
 
 Next, we're going to add the actual header pin symbols into our schematic. You can technically do this whoever you want, but I'm going to adhere to the raspberry Pi Pico pinout:
 
-![[Pasted image 20250928145822.png]]
+![Pasted image 20250928145822.png](journal/Pasted%20image%2020250928145822.png)
 
 So add in a two, 1x20 header pin symbols, and one 1x3 header pin symbol, I just used generic symbols, but you could use pin header symbols if you want, it's just up to preference:
 
-![[Pasted image 20250928150705.png]]
+![Pasted image 20250928150705.png](journal/Pasted%20image%2020250928150705.png)
 
 Usually you don't want to make your symbol layout look exactly like your PCB, but I think it makes it more obvious so that we don't mess up our pinout!
 
@@ -224,17 +224,17 @@ Next, we'll just add in all the pins, and we'll just leave out the ones we don't
 
 Now that we have our I/O headers in, we're actually finished with all the symbols in our schematic, this is how your schematic should look:
 
-![[Pasted image 20250928011553.png]]
+![Pasted image 20250928011553.png](journal/Pasted%20image%2020250928011553.png)
 
 Now to organize our schematic, even more, let's separate our design into different blocks using the text boxes in the schematic editor. When doing this, you usually want to place your component blocks by flow of your PCB. So if you could image, power flows in through the USB, so we'll put that in the corner, the MCU should be center because it's the fundamental of the PCB, and then the other stuff can just be organized around:
 
-![[Pasted image 20250928012357.png]]
+![Pasted image 20250928012357.png](journal/Pasted%20image%2020250928012357.png)
 
 You don't have to do this, but I feel like it keeps everything nice and clean!
 
 Next, run ERC to just make sure you don't have any unconnected or weird stuff happening in your schematic. The only error you might get is **Input Power pin not driven by any Output Power pins**. You can just ignore this error, it's basically just the fact that we're labelling our power as bidirectional, and with no input/output, but we know that the MCU takes in 3.3V and that the USB-C outputs 3.3V, so we're totally fine to ignore it.
 
-![[Pasted image 20250928012841.png]]
+![Pasted image 20250928012841.png](journal/Pasted%20image%2020250928012841.png)
 
 ## Footprint time!
 
@@ -242,7 +242,7 @@ Now that we've finished out schematic, we need to start working on the actual PC
 
 A footprint on a PCB basically just defines it's pads, outline, etc, that your component needs in order to be solder able on a PCB. So just tap on the **assign footprints** tab in the top toolbar to open up the footprints tab:
 
-![[Pasted image 20250928014533.png]]
+![Pasted image 20250928014533.png](journal/Pasted%20image%2020250928014533.png)
 
 Now before we add in our footprints, let's talk about standard imperial sizes of SMD components, and SMD vs THT components.
 
@@ -255,11 +255,11 @@ For SMD footprints, you'll want to understand what the imperial sizes are:
 
 So all of our 0.1uF/1uF/resistors will be 0402, and then the 10uF caps will be 0603, so just filter in the search bar for 0402/0603, and choose the resistor/capacitor footprint for the relative component:
 
-![[Pasted image 20250928015701.png]]
+![Pasted image 20250928015701.png](journal/Pasted%20image%2020250928015701.png)
 
 Now these other components need to usually be found on LCSC and then you go into the datasheet to find the footprint, and then add it in, but I'm decently experienced and know what footprints to use already, so you can just copy what ones I'm using or [find your own](https://jlcpcb.com/parts) if you want and add them in:
 
-![[Pasted image 20250928023130.png]]
+![Pasted image 20250928023130.png](journal/Pasted%20image%2020250928023130.png)
 
 These are my thought process behind the other components, JLCPCB has what's called basic and extended parts, and extended parts cost $3 each to add to a PCB because they have to be loaded into the assembly machines, this will be important here:
 - **USB_C_Receptacle_HRO_TYPE-C-31-M-12**: JLCPCB doesn't have any basic part USB-C receptacles, so I just chose this one I kind of like from a previous board. [PART](https://jlcpcb.com/partdetail/Korean_HropartsElec-TYPE_C_31_M12/C165948)
@@ -269,7 +269,7 @@ These are my thought process behind the other components, JLCPCB has what's call
 
 Now we actually need to modify our crystal schematic a bit because of the part we chose on JLCPCB has a load capacitance is slightly different, so we actually need 33pF caps. You can just search up the math if you want to learn how to do this:
 
-![[Pasted image 20250928023842.png]]
+![Pasted image 20250928023842.png](journal/Pasted%20image%2020250928023842.png)
 
 And just like that, our schematic and footprint selection is finished, so we can actually get to the real fun stuff.. the PCB!
 
@@ -281,7 +281,7 @@ This will bring you into a new editor you haven't seen yet, this is where we'll 
 
 So in the top toolbar, tap the **update PCB from schematic or F8**, and then tap the **update PCB** button that shows up, to bring in all the components into your PCB, and just put them all in the top left corner of your PCB:
 
-![[Pasted image 20250928134415.png]]
+![Pasted image 20250928134415.png](journal/Pasted%20image%2020250928134415.png)
 
 You might get some warnings which can be ignored usually (I just got some pin warnings which are fine), but there shouldn't be any errors.
 
