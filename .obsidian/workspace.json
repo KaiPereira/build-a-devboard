@@ -169,8 +169,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "54d5d758b7d9e42b",
+  "active": "e286d62c253c0238",
   "lastOpenFiles": [
+    "journal/Pasted image 20250927190319.png",
+    "journal/Pasted image 20250927190151.png",
+    "PCB_DESIGN/devboard-backups/devboard-2025-09-27_185943.zip",
     "PCB_DESIGN/#auto_saved_files#",
     "PCB_DESIGN/#auB23E.tmp",
     "PCB_DESIGN/_autosave-devboard.kicad_sch",
@@ -188,10 +191,7 @@
     "journal/Pasted image 20250926064330.png",
     "PCB_DESIGN/devboard-backups/devboard-2025-09-26_063940.zip",
     "journal/Pasted image 20250926063705.png",
-    "journal/Pasted image 20250925164239.png",
     "PCB_DESIGN/devboard-backups/devboard-2025-09-25_164230.zip",
-    "PCB_DESIGN/devboard-backups/devboard-2025-09-25_162146.zip",
-    "PCB_DESIGN/devboard-backups/devboard-2025-09-25_105819.zip",
     "JOURNAL.md"
   ]
 }

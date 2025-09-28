@@ -35,7 +35,7 @@ You'll notice that the RP2040 has capacitors, these are called decoupling capaci
 
 You usually want to put one 0.1uF (or 100nF, the F stands for Farads) decoupling capacitor per power pin, but it's fine to deviate a bit from that, but that's the most optimal way of doing it and what we're going to do.
 
-We're also going to put a 1uF decoupling capacitor on each power line. You'll notice that the RP2040 has a +1V1 (1.1V) and a 3V3 (3.3V) line, we want to put a 1uF decoupling capacitor per line, to act as a larger reservoir and to smoothen out *larger* ripples that could occur. With this combination, we'll filter out nearly all the noise and have a smooth functioning PCB.
+We're also going to put a 1uF decoupling capacitor on each power line. You'll notice that the RP2040 has a +1V1 (1.1V) and a 3V3 (3.3V) line, we want to put a 1uF decoupling capacitor per line, to act as a larger reservoir and to smoothen out *larger* ripples that could occur. With the RP2040, these 1uF capacitors are mostly to help provide a stable 1.1V supply. With this combination, we'll filter out nearly all the noise and have a smooth functioning PCB.
 
 So go back into your schematic and then tap on the "Draw Wires" icon to connect the VREF_VOUT and DVDD, and then separately connect the IO_VDD, USB_VDD, ADC_AVDD and VREG_IN, because these pins use different voltage lines.
 
@@ -196,6 +196,16 @@ The pullup to 3.3V is important, because usually the QSPI pin will show up as 3.
 The 1K resistor in series limits the amount of current that can flow in this part of the circuit to prevent damage to the CS pin.
 
 And just like that, we have our button and decoupling in, and our flash memory is completed!
+
+## Breaking out I/O Headers
+
+Now we have all the components for our board to actually work, so we just need to breakout all the GPIO's on the RP2040, onto header pins so that we can use them in our circuit and whatnot!
+
+But before we do this, let's just make sure we attach TESTEN to GND on the RP2040, this pin is just meant for factories to make sure that the RP2040 SoC actually works before sending them out.
+
+Next, we'll label all the other pins we haven't broken out (all the GPIO's, SWCLK and SWD), with their relative name on the RP2040. These are all bidirectional pins except the SWCLK pin, which is a clock output from the SoC:
+
+![[Pasted image 20250927190319.png]]
 
 
 
