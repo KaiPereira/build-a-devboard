@@ -264,10 +264,24 @@ These are my thought process behind the other components, JLCPCB has what's call
 - **SW_Push_SPST_NO_Alps_SKRK**: This is a small SMD size button footprint found in the JLCPCB *basic* library, so it doesn't cost anything extra and is pretty compact. This isn't actually the EXACT footprint, but it's close by like .1mm, and I found it by just scrolling through footprints with some filters. [PART](https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477)
 - **Crystal_SMD_3225-4Pin_3.2x2.5mm**: I found this crystal on JLCPCB basic parts, and looked at the datasheet to find the footprint. You really have to make sure your crystal footprint pinout is proper because lots of people accidentally use the wrong footprint or symbol. [PART](https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002)
 
-Now we actually need to modify our crystal schematic a bit because of the part we chose on JLCPCB, the load capacitance is slightly different, so we actually need 33pF caps. You can just search up the math if you want to learn how to do this:
+Now we actually need to modify our crystal schematic a bit because of the part we chose on JLCPCB has a load capacitance is slightly different, so we actually need 33pF caps. You can just search up the math if you want to learn how to do this:
 
 ![[Pasted image 20250928023842.png]]
 
+And just like that, our schematic and footprint selection is finished, so we can actually get to the real fun stuff.. the PCB!
 
+## Let's design a PCB
+
+Now that all that stuffs done, tap the switch to PCB editor button on the far right of the top toolbar!
+
+This will bring you into a new editor you haven't seen yet, this is where we'll actually place down the components on our PCB, and route everything.
+
+So in the top toolbar, tap the **update PCB from schematic or F8**, and then tap the **update PCB** button that shows up, to bring in all the components into your PCB, and just put them all in the top left corner of your PCB:
+
+![[Pasted image 20250928134415.png]]
+
+You might get some warnings which can be ignored usually (I just got some pin warnings which are fine), but there shouldn't be any errors.
+
+Now you'll see our actual components on the PCB, our USB-C, the RP2040, the button, crystal, LDO, flash, headers and our caps/resistors!
 
 
