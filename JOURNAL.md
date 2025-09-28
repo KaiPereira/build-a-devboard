@@ -207,15 +207,18 @@ Next, we'll label all the other pins we haven't broken out (all the GPIO's, SWCL
 
 ![[Pasted image 20250928011101.png]]
 
-Next, we need to add the actual header pins into our schematic, you could technically do this whoever you want, but we're going to adhere to the Pi Pico standard which is a 02x18 connector on each side, and a GND every 2 or so pins, so you can just copy what I'm going to do.
+Next, we're going to add the actual header pin symbols into our schematic. You can technically do this whoever you want, but I'm going to adhere to the raspberry Pi Pico pinout:
 
-So, add in 2x **Conn_02x18_Odd_Even** symbols, and then just copy my labels I used:
+![[Pasted image 20250928145822.png]]
 
-![[Pasted image 20250928011307.png]]
+So add in a two, 1x20 header pin symbols, and one 1x3 header pin symbol, I just used generic symbols, but you could use pin header symbols if you want, it's just up to preference:
 
-I'd suggest using this little dropdown when adding in global labels to make sure you don't accidentally put in the wrong label name, and then just filter by typing what you're looking for and enter to start using it:
+![[Pasted image 20250928150705.png]]
 
-![[Pasted image 20250928011353.png]]
+Usually you don't want to make your symbol layout look exactly like your PCB, but I think it makes it more obvious so that we don't mess up our pinout!
+
+Next, we'll just add in all the pins, and we'll just leave out the ones we don't know yet like VSYS, 3V3_EN and stuff, I'll explain those after:
+
 
 ## Finishing up the schematic
 
