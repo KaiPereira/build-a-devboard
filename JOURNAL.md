@@ -205,11 +205,14 @@ But before we do this, let's just make sure we attach TESTEN to GND on the RP204
 
 Next, we'll label all the other pins we haven't broken out (all the GPIO's, SWCLK and SWD), with their relative name on the RP2040. These are all bidirectional pins except the SWCLK pin, which is a clock output from the SoC:
 
-![[Pasted image 20250927190319.png]]
+![[Pasted image 20250928011101.png]]
 
 Next, we need to add the actual header pins into our schematic, you could technically do this whoever you want, but we're going to adhere to the Pi Pico standard which is a 02x18 connector on each side, and a GND every 2 or so pins, so you can just copy what I'm going to do.
 
 So, add in 2x **Conn_02x18_Odd_Even** symbols, and then just copy my labels I used:
 
+![[Pasted image 20250928011307.png]]
 
+I'd suggest using this little dropdown when adding in global labels to make sure you don't accidentally put in the wrong label name, and then just filter by typing what you're looking for and enter to start using it:
 
+![[Pasted image 20250928011353.png]]
