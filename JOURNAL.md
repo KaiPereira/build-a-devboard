@@ -216,3 +216,16 @@ So, add in 2x **Conn_02x18_Odd_Even** symbols, and then just copy my labels I us
 I'd suggest using this little dropdown when adding in global labels to make sure you don't accidentally put in the wrong label name, and then just filter by typing what you're looking for and enter to start using it:
 
 ![[Pasted image 20250928011353.png]]
+
+## Finishing up the schematic
+
+Now that we have our I/O headers in, we're actually finished with all the symbols in our schematic, this is how your schematic should look:
+
+![[Pasted image 20250928011553.png]]
+
+Now to organize our schematic, even more, let's separate our design into different blocks using the text boxes in the schematic editor. When doing this, you usually want to place your component blocks by flow of your PCB. So if you could image, power flows in through the USB, so we'll put that in the corner, the MCU should be center because it's the fundamental of the PCB, and then the other stuff can just be organized around:
+
+![[Pasted image 20250928012357.png]]
+
+You don't have to do this, but I feel like it keeps everything nice and clean!
+
