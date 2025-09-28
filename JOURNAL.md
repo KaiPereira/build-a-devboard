@@ -17,6 +17,8 @@ The PCB editor is where you'll place down all your components and route everythi
 
 ADD IMAGE HERE OF FINAL THING
 
+## Starting the schematic
+
 So enter in your schematic, and then tap "a", this will open up the symbol library, which is the place where you can find component blocks that you'll wire together to form the schematic for your project. Search for the RP2040, and just place it down in the center of your schematic.
 
 ![Pasted image 20250925070320.png](journal/Pasted%20image%2020250925070320.png)
@@ -64,6 +66,8 @@ These are the decoupling capacitors for the 3.3V line, now we need to do the cap
 Now we have all of our power decoupling. We also need to connect GND to the SoC, this is pretty self-explanatory, but it allows power to actually flow properly.
 
 ![Pasted image 20250925103224.png](journal/Pasted%20image%2020250925103224.png)
+
+## Working on USB-C
 
 We have our power decoupling, but we don't actually have a power source yet or a way to program our devboard yet, so let's do that now. I'm going to be using USB-C because it's standard, fast and I kind of want to add a motor driver to my board for fun!
 
@@ -122,6 +126,8 @@ Now USB D+ and D- are actually what's called "bidirectional", this means that th
 
 ![Pasted image 20250926064330.png](journal/Pasted%20image%2020250926064330.png)
 
+## The crystal oscillator
+
 Now to make our USB and other peripherals actually work properly, we need to have what's called a clock oscillator. This is a little piezoelectric quartz crystal that vibrates very precisely, and then it's amplified and fed into the MCU to act as a clock signal that controls the digital peripherals.
 
 For example, you definitely want a crystal oscillator if you're using USB-C, because the data needs to come in at specific times, so it makes sure no data is incorrectly received. Because the clock is such a precise component, you want to wire it really carefully. That means it should be as close to the MCU as possible on the PCB (schematic doesn't matter, it's just a reference), and it needs really small capacitors, to smooth tiny voltage ripples that could affect the signals.
@@ -144,7 +150,9 @@ Remember all your schematic good practices and make sure everything looks clean.
 
 We haven't actually seen these types of caps yet, these are called external load capacitors, and they're placed in series with the crystal I/O's, these basically just ensure that the crystal resonates at it's proper frequency, I'd suggest researching a bit more if you're interested!
 
-Now lot's of SoC's include flash storage, but the RP2040 actually doesn't, so we need to add on our own flash storage!
+## Flash storage
+
+Now lot's of SoC's include flash storage, but the RP2040 actually doesn't, so we need to add on our own flash storage! You can think of flash storage as like a faster version of an HDD, with less power consumption, more reliability but is usually a bit more expensive.
 
 Sadly, the RP2040 only supports up to 16mb of memory, so we'll just use a quad SPI flash memory IC (integrated circuit, those little chips on a board) like the **W25Q128JVS** used in the datasheet.
 
