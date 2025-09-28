@@ -229,3 +229,28 @@ Now to organize our schematic, even more, let's separate our design into differe
 
 You don't have to do this, but I feel like it keeps everything nice and clean!
 
+Next, run ERC to just make sure you don't have any unconnected or weird stuff happening in your schematic. The only error you might get is **Input Power pin not driven by any Output Power pins**. You can just ignore this error, it's basically just the fact that we're labelling our power as bidirectional, and with no input/output, but we know that the MCU takes in 3.3V and that the USB-C outputs 3.3V, so we're totally fine to ignore it.
+
+![[Pasted image 20250928012841.png]]
+
+## Footprint time!
+
+Now that we've finished out schematic, we need to start working on the actual PCB. The first thing you need to do for the actual PCB, is to add in all the footprints for your components.
+
+A footprint on a PCB basically just defines it's pads, outline, etc, that your component needs in order to be solder able on a PCB. So just tap on the **assign footprints** tab in the top toolbar to open up the footprints tab:
+
+![[Pasted image 20250928014533.png]]
+
+Now before we add in our footprints, let's talk about standard imperial sizes of SMD components, and SMD vs THT components.
+
+So if you don't know, there's SMD components, which are surface mount, which means that the components are attached to the surface of the PCB like caps, and then there's THT components, which are soldered *through* the board, these are things like the headers.
+
+For SMD footprints, you'll want to understand what the imperial sizes are:
+- 0402 are the smallest footprint we'll have on our PCB, these are tiny footprints and anything smaller than this becomes too small to easily solder, these are good for low current applications, and are fine for our fine signal decoupling.
+- 0603 footprints are a bit larger than 0402, and are better for slightly higher current and will maintain better physical stability for the larger decoupling needed for 10uF caps and such.
+- 0805 footprints are pretty large and are really just needed in higher current applications, we won't be using any of these because we don't have any crazy large caps/components
+
+So all of our 0.1uF/1uF/resistors will be 0402, and then the 10uF caps will be 0603, so just filter in the search bar for 0402/0603, and choose the resistor/capacitor footprint for the relative component:
+
+![[Pasted image 20250928015701.png]]
+
