@@ -254,3 +254,20 @@ So all of our 0.1uF/1uF/resistors will be 0402, and then the 10uF caps will be 0
 
 ![[Pasted image 20250928015701.png]]
 
+Now these other components need to usually be found on LCSC and then you go into the datasheet to find the footprint, and then add it in, but I'm decently experienced and know what footprints to use already, so you can just copy what ones I'm using or [find your own](https://jlcpcb.com/parts) if you want and add them in:
+
+![[Pasted image 20250928023130.png]]
+
+These are my thought process behind the other components, JLCPCB has what's called basic and extended parts, and extended parts cost $3 each to add to a PCB because they have to be loaded into the assembly machines, this will be important here:
+- **USB_C_Receptacle_HRO_TYPE-C-31-M-12**: JLCPCB doesn't have any basic part USB-C receptacles, so I just chose this one I kind of like from a previous board. [PART](https://jlcpcb.com/partdetail/Korean_HropartsElec-TYPE_C_31_M12/C165948)
+- **PinHeader_2x18_P2.54mm_Vertical**: This is just the proper size header pins we need, they should be through hole/THT to be stronger instead of SMD, I mean if you wanted to, it could be SMD though. Part is just pin headers I'll buy separately
+- **SW_Push_SPST_NO_Alps_SKRK**: This is a small SMD size button footprint found in the JLCPCB *basic* library, so it doesn't cost anything extra and is pretty compact. This isn't actually the EXACT footprint, but it's close by like .1mm, and I found it by just scrolling through footprints with some filters. [PART](https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477)
+- **Crystal_SMD_3225-4Pin_3.2x2.5mm**: I found this crystal on JLCPCB basic parts, and looked at the datasheet to find the footprint. You really have to make sure your crystal footprint pinout is proper because lots of people accidentally use the wrong footprint or symbol. [PART](https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002)
+
+Now we actually need to modify our crystal schematic a bit because of the part we chose on JLCPCB, the load capacitance is slightly different, so we actually need 33pF caps. You can just search up the math if you want to learn how to do this:
+
+![[Pasted image 20250928023842.png]]
+
+
+
+

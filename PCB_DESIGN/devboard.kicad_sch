@@ -9372,7 +9372,7 @@
 				)
 			)
 		)
-		(property "Value" "15pF"
+		(property "Value" "33pF"
 			(at 232.41 98.044 90)
 			(effects
 				(font
@@ -9849,7 +9849,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x18_P2.54mm_Vertical"
 			(at 35.56 119.38 0)
 			(effects
 				(font
@@ -10018,7 +10018,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm"
 			(at 245.11 106.68 0)
 			(effects
 				(font
@@ -11443,7 +11443,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x18_P2.54mm_Vertical"
 			(at 83.82 119.38 0)
 			(effects
 				(font
@@ -11682,7 +11682,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
 			(at 39.37 48.26 0)
 			(effects
 				(font
@@ -13054,7 +13054,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK"
 			(at 219.71 45.72 0)
 			(effects
 				(font
@@ -13348,7 +13348,7 @@
 				)
 			)
 		)
-		(property "Value" "15pF"
+		(property "Value" "33pF"
 			(at 232.41 108.204 90)
 			(effects
 				(font
