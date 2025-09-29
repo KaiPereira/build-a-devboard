@@ -301,4 +301,20 @@ You might get some warnings which can be ignored usually (I just got some pin wa
 
 Now you'll see our actual components on the PCB, our USB-C, the RP2040, the button, crystal, LDO, flash, headers and our caps/resistors!
 
+## PCB Layout
 
+Now before we actually lay out all of our components, we need to define our PCB outline, holes, etc. So using the datasheet as a reference, we'll place down everything accordingly. Start with the board outline, and then do holes and stuff.
+
+![[Pasted image 20250928214035.png]]
+
+To add in a board outline, **tap on the Edge.Cuts layer** and then tap on **Draw Rectangles**, and then just put whatever size rectangle you want. After that, we'll add in the proper size from the datasheet, which is 21x51mm, so tap on the rectangle, then tap **"e"** and use the **By Center and Size** tab to do this:
+
+![[Pasted image 20250928214259.png]]
+
+And we actually forgot to add in mounting holes, so go back to your schematic and add those in:
+
+![[Pasted image 20250928215223.png]]
+
+And then the datasheet says they need to be 2.1mm, so use the MountingHole_2.1mm** footprint, and add them onto your PCB:
+
+![[Pasted image 20250928215313.png]]
