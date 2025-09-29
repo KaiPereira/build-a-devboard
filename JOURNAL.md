@@ -217,18 +217,32 @@ So add in a two, 1x20 header pin symbols, and one 1x3 header pin symbol, I just 
 
 Usually you don't want to make your symbol layout look exactly like your PCB, but I think it makes it more obvious so that we don't mess up our pinout!
 
-Next, we'll just add in all the pins, and we'll just leave out the ones we don't know yet like VSYS, 3V3_EN and stuff, I'll explain those after:
+Next, we'll just add in all the pins, and we'll just leave out the ones we don't know yet like VSYS, 3V3_EN and ADC_VREF, I'll explain those after:
 
+![[Pasted image 20250928205318.png]]
 
+Now the Pi Pico can actually be powered by a battery, but we're not implementing a battery (if you want to, check out the Pi Pico datasheet), so there's a diode on the VBUS power line, so they have a VSYS line after the diode and a VBUS line before it, but because we don't need a diode, we don't need VSYS.
+
+This also means we don't need 3V3_EN, and then ADC_VREF is kind of just another thing to give a reference voltage to ADC, but it isn't really necessary, and we're just making a simple devboard so we won't use it.
+
+Because we have these free pins, and also some GPIO's still left, let's just fill these pins with some GPIO's. I'm going to move the ADC pins up, and then fill the other pins with GPIO's. I also want to use GPIO29 which is an ADC pin and replace GPIO25 with that just so we get the added ADC pin:
+
+![[Pasted image 20250928210525.png]]
+
+Because of this, you'll want to just no-connect GPIO25 on the MCU, just to tell KiCad and others that we're not using that pin:
+
+![[Pasted image 20250928210731.png]]
+
+If you want to add battery support, you can do so yourself, but I'm keeping to a minimum framework. And just like that, we have all of our header pins in!
 ## Finishing up the schematic
 
 Now that we have our I/O headers in, we're actually finished with all the symbols in our schematic, this is how your schematic should look:
 
-![Pasted image 20250928011553.png](journal/Pasted%20image%2020250928011553.png)
+![[Pasted image 20250928210832.png]]
 
 Now to organize our schematic, even more, let's separate our design into different blocks using the text boxes in the schematic editor. When doing this, you usually want to place your component blocks by flow of your PCB. So if you could image, power flows in through the USB, so we'll put that in the corner, the MCU should be center because it's the fundamental of the PCB, and then the other stuff can just be organized around:
 
-![Pasted image 20250928012357.png](journal/Pasted%20image%2020250928012357.png)
+![[Pasted image 20250928210335.png]]
 
 You don't have to do this, but I feel like it keeps everything nice and clean!
 
