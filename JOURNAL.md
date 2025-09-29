@@ -374,8 +374,18 @@ This is the layout I decided on, some of my thought process for this layout was:
 
 And I'll still definitely actively update it while I route my traces, but this is a good starting point.
 
+Now all that's left to add in, is our resistors, but I'm going to actually put these to the side, and start routing a couple things! This is because it's going to be easier to place components not in the way of where traces are going to go.
 
+**Not before we start routing, remember a couple key things about routing:**
+- Never have a trace at a 90 degree angle, these mess with your signals, and also sometimes get manufactured weirdly
+- Think about what you're going to route next, so that you don't route where that trace needs to go
+- Know what you're routing, things like decoupling caps need to have short, small traces, etc.
 
+So, the first thing I'm going to route is my flash memory, I'm going to move the capacitors away temporarily while I do this and then add them back on later. So tap on the **route single track** in the right hand toolbar, and then route all the signals like so:
 
+![[Pasted image 20250929134312.png]]
 
+I usually start my route from the RP2040, and then put it into the component just because I find it's easier. I always start with routing my higher speed signals, and then do the lower ones.
+
+Next, I'm going to route
 
