@@ -219,7 +219,7 @@ Usually you don't want to make your symbol layout look exactly like your PCB, bu
 
 Next, we'll just add in all the pins, and we'll just leave out the ones we don't know yet like VSYS, 3V3_EN and ADC_VREF, I'll explain those after:
 
-![[Pasted image 20250928205318.png]]
+![Pasted image 20250928205318.png](journal/Pasted%20image%2020250928205318.png)
 
 Now the Pi Pico can actually be powered by a battery, but we're not implementing a battery (if you want to, check out the Pi Pico datasheet), so there's a diode on the VBUS power line, so they have a VSYS line after the diode and a VBUS line before it, but because we don't need a diode, we don't need VSYS.
 
@@ -227,28 +227,28 @@ This also means we don't need 3V3_EN, and then ADC_VREF is kind of just another 
 
 Because we have these free pins, and also some GPIO's still left, let's just fill these pins with some GPIO's. I'm going to move the ADC pins up, and then fill the other pins with GPIO's. I also want to use GPIO29 which is an ADC pin and replace GPIO25 with that just so we get the added ADC pin:
 
-![[Pasted image 20250928210525.png]]
+![Pasted image 20250928210525.png](journal/Pasted%20image%2020250928210525.png)
 
 Because of this, you'll want to just no-connect GPIO25 on the MCU, just to tell KiCad and others that we're not using that pin:
 
-![[Pasted image 20250928210731.png]]
+![Pasted image 20250928210731.png](journal/Pasted%20image%2020250928210731.png)
 
 If you want to add battery support, you can do so yourself, but I'm keeping to a minimum framework. And just like that, we have all of our header pins in!
 ## Finishing up the schematic
 
 Now that we have our I/O headers in, we're actually finished with all the symbols in our schematic, this is how your schematic should look:
 
-![[Pasted image 20250928210917.png]]
+![Pasted image 20250928210917.png](journal/Pasted%20image%2020250928210917.png)
 
 Now to organize our schematic, even more, let's separate our design into different blocks using the text boxes in the schematic editor. When doing this, you usually want to place your component blocks by flow of your PCB. So if you could image, power flows in through the USB, so we'll put that in the corner, the MCU should be center because it's the fundamental of the PCB, and then the other stuff can just be organized around:
 
-![[Pasted image 20250928211031.png]]
+![Pasted image 20250928211031.png](journal/Pasted%20image%2020250928211031.png)
 
 You don't have to do this, but I feel like it keeps everything nice and clean!
 
 Next, run ERC to just make sure you don't have any unconnected or weird stuff happening in your schematic. The only error you might get is **Input Power pin not driven by any Output Power pins**. You can just ignore this error, it's basically just the fact that we're labelling our power as bidirectional, and with no input/output, but we know that the MCU takes in 3.3V and that the USB-C outputs 3.3V, so we're totally fine to ignore it.
 
-![[Pasted image 20250928211106.png]]
+![Pasted image 20250928211106.png](journal/Pasted%20image%2020250928211106.png)
 
 ## Footprint time!
 
@@ -256,7 +256,7 @@ Now that we've finished out schematic, we need to start working on the actual PC
 
 A footprint on a PCB basically just defines it's pads, outline, etc, that your component needs in order to be solder able on a PCB. So just tap on the **assign footprints** tab in the top toolbar to open up the footprints tab:
 
-![[Pasted image 20250928211235.png]]
+![Pasted image 20250928211235.png](journal/Pasted%20image%2020250928211235.png)
 
 Now before we add in our footprints, let's talk about standard imperial sizes of SMD components, and SMD vs THT components.
 
@@ -269,11 +269,11 @@ For SMD footprints, you'll want to understand what the imperial sizes are:
 
 So all of our 0.1uF/1uF/resistors will be 0402, and then the 10uF caps will be 0603, so just filter in the search bar for 0402/0603, and choose the resistor/capacitor footprint for the relative component:
 
-![[Pasted image 20250928211327.png]]
+![Pasted image 20250928211327.png](journal/Pasted%20image%2020250928211327.png)
 
 Now these other components need to usually be found on LCSC and then you go into the datasheet to find the footprint, and then add it in, but I'm decently experienced and know what footprints to use already, so you can just copy what ones I'm using or [find your own](https://jlcpcb.com/parts) if you want and add them in:
 
-![[Pasted image 20250928211526.png]]
+![Pasted image 20250928211526.png](journal/Pasted%20image%2020250928211526.png)
 
 These are my thought process behind the other components, JLCPCB has what's called basic and extended parts, and extended parts cost $3 each to add to a PCB because they have to be loaded into the assembly machines, this will be important here:
 - **USB_C_Receptacle_HRO_TYPE-C-31-M-12**: JLCPCB doesn't have any basic part USB-C receptacles, so I just chose this one I kind of like from a previous board. [PART](https://jlcpcb.com/partdetail/Korean_HropartsElec-TYPE_C_31_M12/C165948)
@@ -295,7 +295,7 @@ This will bring you into a new editor you haven't seen yet, this is where we'll 
 
 So in the top toolbar, tap the **update PCB from schematic or F8**, and then tap the **update PCB** button that shows up, to bring in all the components into your PCB, and just put them all in the top left corner of your PCB:
 
-![Pasted image 20250928134415.png](journal/Pasted%20image%2020250928134415.png)
+![Pasted image 20250928211730.png](journal/Pasted%20image%2020250928211730.png)
 
 You might get some warnings which can be ignored usually (I just got some pin warnings which are fine), but there shouldn't be any errors.
 
