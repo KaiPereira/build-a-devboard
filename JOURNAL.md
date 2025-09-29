@@ -393,11 +393,15 @@ The termination resistors for these data lines also need to be right by the RP20
 
 ![Pasted image 20250929134841.png](journal/Pasted%20image%2020250929134841.png)
 
-Now to route a differential pair, **hold** the route tracks button, and go over to the symbol with 2 traces on it, or just tap 6. Then, go over to your USB-C, and tap on one of the D+/D- pins to start the trace, and route it down to your resistors. If the traces won't go into your resistors pads, that means that your resistors aren't evenly positioned, you can just the relative positioning tool to do this. 
+Now to route a differential pair. First wire the USB D+'s/D-'s together:
+
+![[Pasted image 20250929163018.png]]
+
+Then, **hold** the route tracks button, and go over to the symbol with 2 traces on it, or just tap 6. Then, go over to your USB-C, and tap on one of the D+/D- pins to start the trace, and route it down to your resistors. If the traces won't go into your resistors pads, that means that your resistors aren't evenly positioned, you can just the relative positioning tool to do this. 
 
 And then you can just route the resistors nets into the RP2040 nets (Make sure they're centered so the traces are the same length, you could technically do this as a differential pair if you change your schematic slightly, but it's fine if you just position properly):
 
-![[Pasted image 20250929155114.png]]
+![[Pasted image 20250929163304.png]]
 
 I added left a space inside of the USB traces for the decoupling capacitors to go.
 
@@ -407,9 +411,13 @@ Now we need to make sure all these traces are the same sizes, you can check the 
 
 And then, your USB-C lines, are probably not the same length, so we need to fix that. You can do that by going to **route -> Tune skew of a differential pair** in the top menu, and then selecting the trace with a negative skew, and just tapping it, and then tapping **ok**, and it should make it slightly longer:
 
-![[Pasted image 20250929155310.png]]
+![[Pasted image 20250929163336.png]]
 
-This makes all of our traces the exact same size, so that we have proper data flow! Now that we have our fast signals on the PCB, the other signals are fine to go through via's, so we can put in our decoupling caps now:
+This makes all of our traces the exact same size, so that we have proper data flow! 
+
+Now we just need to wire the extra pair of D+/D-'s on the USB-C to the route that we already have. Just wire these directly 
+
+Now that we have our fast signals on the PCB, the other signals are fine to go through via's, so we can put in our decoupling caps now:
 
 **Leave all of the grounds for last, I'll explain this soon**
 
@@ -419,6 +427,6 @@ Now my routing of course isn't perfect, but I did manage to get it pretty nice a
 
 Anyways, next I'm going to route the crystal and then add the rest of the resistors, and then I'm going to leave the button/button resistor for very last because there's no specific spot that needs to be:
 
-![[Pasted image 20250929162439.png]]
+
 
 
