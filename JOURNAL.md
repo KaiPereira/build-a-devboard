@@ -319,8 +319,12 @@ Next, we need to put our bottom header in, these are aligned to Y **-1.61** and 
 
 ![[Pasted image 20250928225551.png]]
 
+Next, I'm going to put in the RP2040 dead center, but with the Y slightly farther down, because there's more components above the Pico than below, so I want a bit more space for signals, I'm going to put it down an extra 4mm, but you can do how much you want. 
 
+![[Pasted image 20250928230231.png]]
 
+Then, I'm going to center the USB-C, down a bit to the top of the devboard:
 
+![[Pasted image 20250928230453.png]]
 
 
