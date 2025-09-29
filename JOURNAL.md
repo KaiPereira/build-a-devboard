@@ -311,4 +311,16 @@ To add in a board outline, **tap on the Edge.Cuts layer** and then tap on **Draw
 
 ![Pasted image 20250928214259.png](journal/Pasted%20image%2020250928214259.png)
 
+Next, we'll align the header pins onto our PCB by using the position tool. So right click on one of the header pins, go **Positioning Tools -> Position Relative To**, and then go **Select Point** and tap one of the top corners of the board outline. And then using the datasheet, align the X to **1.61/-1.61** based off of the side, and the Y to **1.37**:
+
+![[Pasted image 20250928225148.png]]
+
+Next, we need to put our bottom header in, these are aligned to Y **-1.61** and the X should be centered so **7.96** (10.5 is the center, minus 2.54 the pin spacing), and use the bottom left/right as reference (make sure it's flipped horizontally when aligning):
+
+![[Pasted image 20250928225551.png]]
+
+
+
+
+
 
