@@ -354,3 +354,28 @@ I use exact positioning when doing things like this, but you can just draw them 
 Next, I'm going to put the crystal on. The crystal should be very close to the RP2040 XIN/XOUT pins because it's a very precise signal, and the load capacitors should be RIGHT next to the pins too. You can then just put the resistor right by the XOUT pin of the RP2040:
 
 ![Pasted image 20250929114427.png](journal/Pasted%20image%2020250929114427.png)
+
+Now I'm going to put all the decoupling capacitors on my board. **Decoupling capacitors should be as close as possible to the pins they're decoupling**, the larger the cap is, the farther it can be, but try to keep them close to their pins.
+
+Also feel free to mess with layout a bit during this step just so everything fits in efficiently! Try to use whatever capacitor you used in your schematic for organization purposes.
+
+First I usually group all the caps that go together, and then I usually either start with the SoC caps, or components caps, I'm going to start with the components caps:
+
+![[Pasted image 20250929120135.png]]
+
+**Remember, caps go by whatever they're decoupling**. Now all the RP2040 caps are grouped together, and this is because it's just a general rule to have one cap per VDD pin, and then the larger cap/bulk cap near the group of them:
+
+![[Pasted image 20250929121131.png]]
+
+This is the layout I decided on, some of my thought process for this layout was:
+- Leave enough space to route the USB differential pair
+- Be able to route QSPI without via's for fast signals
+- Leave enough space by the crystal to be able to route those traces
+
+And I'll still definitely actively update it while I route my traces, but this is a good starting point.
+
+
+
+
+
+
