@@ -397,14 +397,28 @@ Now to route a differential pair, **hold** the route tracks button, and go over 
 
 And then you can just route the resistors nets into the RP2040 nets (Make sure they're centered so the traces are the same length, you could technically do this as a differential pair if you change your schematic slightly, but it's fine if you just position properly):
 
-![Pasted image 20250929135204.png](journal/Pasted%20image%2020250929135204.png)
+![[Pasted image 20250929155114.png]]
+
+I added left a space inside of the USB traces for the decoupling capacitors to go.
 
 Now we need to make sure all these traces are the same sizes, you can check the resistor traces by using the **Tune length of a single track** tool on the right toolbar, they should be the same length if you did it right:
 
-![Pasted image 20250929135324.png](journal/Pasted%20image%2020250929135324.png)
+![[Pasted image 20250929155154.png]]
 
 And then, your USB-C lines, are probably not the same length, so we need to fix that. You can do that by going to **route -> Tune skew of a differential pair** in the top menu, and then selecting the trace with a negative skew, and just tapping it, and then tapping **ok**, and it should make it slightly longer:
 
-![Pasted image 20250929135538.png](journal/Pasted%20image%2020250929135538.png)
+![[Pasted image 20250929155310.png]]
 
-This makes all of our traces the exact same size, so that we have proper data flow!
+This makes all of our traces the exact same size, so that we have proper data flow! Now that we have our fast signals on the PCB, the other signals are fine to go through via's, so we can put in our decoupling caps now:
+
+**Leave all of the grounds for last, I'll explain this soon**
+
+![[Pasted image 20250929161759.png]]
+
+Now my routing of course isn't perfect, but I did manage to get it pretty nice and tight. You'll notice some blue on the PCB, and that's me routing on the other layer. You can change layers by tapping the other layer on the right layers view, or by tapping V. But for SMD components, you'll need what's called a VIA in order to get to the other layer, which is essentially just a hole. Feel free to use the backside for routing if you don't have any space!
+
+Anyways, next I'm going to route the crystal and then add the rest of the resistors, and then I'm going to leave the button/button resistor for very last because there's no specific spot that needs to be:
+
+![[Pasted image 20250929162439.png]]
+
+
