@@ -238,17 +238,17 @@ If you want to add battery support, you can do so yourself, but I'm keeping to a
 
 Now that we have our I/O headers in, we're actually finished with all the symbols in our schematic, this is how your schematic should look:
 
-![[Pasted image 20250928210832.png]]
+![[Pasted image 20250928210917.png]]
 
 Now to organize our schematic, even more, let's separate our design into different blocks using the text boxes in the schematic editor. When doing this, you usually want to place your component blocks by flow of your PCB. So if you could image, power flows in through the USB, so we'll put that in the corner, the MCU should be center because it's the fundamental of the PCB, and then the other stuff can just be organized around:
 
-![[Pasted image 20250928210335.png]]
+![[Pasted image 20250928211031.png]]
 
 You don't have to do this, but I feel like it keeps everything nice and clean!
 
 Next, run ERC to just make sure you don't have any unconnected or weird stuff happening in your schematic. The only error you might get is **Input Power pin not driven by any Output Power pins**. You can just ignore this error, it's basically just the fact that we're labelling our power as bidirectional, and with no input/output, but we know that the MCU takes in 3.3V and that the USB-C outputs 3.3V, so we're totally fine to ignore it.
 
-![Pasted image 20250928012841.png](journal/Pasted%20image%2020250928012841.png)
+![[Pasted image 20250928211106.png]]
 
 ## Footprint time!
 
@@ -256,7 +256,7 @@ Now that we've finished out schematic, we need to start working on the actual PC
 
 A footprint on a PCB basically just defines it's pads, outline, etc, that your component needs in order to be solder able on a PCB. So just tap on the **assign footprints** tab in the top toolbar to open up the footprints tab:
 
-![Pasted image 20250928014533.png](journal/Pasted%20image%2020250928014533.png)
+![[Pasted image 20250928211235.png]]
 
 Now before we add in our footprints, let's talk about standard imperial sizes of SMD components, and SMD vs THT components.
 
@@ -269,15 +269,15 @@ For SMD footprints, you'll want to understand what the imperial sizes are:
 
 So all of our 0.1uF/1uF/resistors will be 0402, and then the 10uF caps will be 0603, so just filter in the search bar for 0402/0603, and choose the resistor/capacitor footprint for the relative component:
 
-![Pasted image 20250928015701.png](journal/Pasted%20image%2020250928015701.png)
+![[Pasted image 20250928211327.png]]
 
 Now these other components need to usually be found on LCSC and then you go into the datasheet to find the footprint, and then add it in, but I'm decently experienced and know what footprints to use already, so you can just copy what ones I'm using or [find your own](https://jlcpcb.com/parts) if you want and add them in:
 
-![Pasted image 20250928023130.png](journal/Pasted%20image%2020250928023130.png)
+![[Pasted image 20250928211526.png]]
 
 These are my thought process behind the other components, JLCPCB has what's called basic and extended parts, and extended parts cost $3 each to add to a PCB because they have to be loaded into the assembly machines, this will be important here:
 - **USB_C_Receptacle_HRO_TYPE-C-31-M-12**: JLCPCB doesn't have any basic part USB-C receptacles, so I just chose this one I kind of like from a previous board. [PART](https://jlcpcb.com/partdetail/Korean_HropartsElec-TYPE_C_31_M12/C165948)
-- **PinHeader_2x18_P2.54mm_Vertical**: This is just the proper size header pins we need, they should be through hole/THT to be stronger instead of SMD, I mean if you wanted to, it could be SMD though. Part is just pin headers I'll buy separately
+- **PinHeader_1x20_P2.54mm_Vertical**: This is just the proper size header pins we need, they should be through hole/THT to be stronger instead of SMD, I mean if you wanted to, it could be SMD though. The part is just pin headers I'll buy separately
 - **SW_Push_SPST_NO_Alps_SKRK**: This is a small SMD size button footprint found in the JLCPCB *basic* library, so it doesn't cost anything extra and is pretty compact. This isn't actually the EXACT footprint, but it's close by like .1mm, and I found it by just scrolling through footprints with some filters. [PART](https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477)
 - **Crystal_SMD_3225-4Pin_3.2x2.5mm**: I found this crystal on JLCPCB basic parts, and looked at the datasheet to find the footprint. You really have to make sure your crystal footprint pinout is proper because lots of people accidentally use the wrong footprint or symbol. [PART](https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002)
 
