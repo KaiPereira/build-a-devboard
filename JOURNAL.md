@@ -315,6 +315,8 @@ Next, we'll align the header pins onto our PCB by using the position tool. So ri
 
 ![[Pasted image 20250928225148.png]]
 
+(I actually misaligned my header pins in this screenshot which I fix later, but just put J2 as the first header, and J3 as the second one, so it's easier to route)
+
 Next, we need to put our bottom header in, these are aligned to Y **-1.61** and the X should be centered so **7.96** (10.5 is the center, minus 2.54 the pin spacing), and use the bottom left/right as reference (make sure it's flipped horizontally when aligning):
 
 ![[Pasted image 20250928225551.png]]
@@ -327,4 +329,28 @@ Then, I'm going to center the USB-C, down a bit to the top of the devboard:
 
 ![[Pasted image 20250928230453.png]]
 
+Now looking at the flash memory and LDO IC, they're really big, so let's use different components for them:
 
+![[Pasted image 20250928231949.png]]
+
+I'm going to switch to the MCP1700 LDO, which is smaller, but does handle less current (250ma), so if you plan on drawing more current, you might want to use a different LDO. So just replace the NCP1700 with the **MCP1700x-330xxTT**:
+
+![[Pasted image 20250929111310.png]]
+
+And then, we're going to change the flash memory to what the Pi Pico uses and has a slightly smaller package, which is the **W25Q16JVZPIQ TR** and uses the **Package_SON:Winbond_USON-8-1EP_3x2mm_P0.5mm_EP0.2x1.6mm** footprint, which isn't the exact footprint, but should work fine:
+
+![[Pasted image 20250929112550.png]]
+
+Now your footprints should be much better:
+
+![[Pasted image 20250929112732.png]]
+
+Anyways next, we're going to organize our parts onto the PCB (I also fixed my header pins and MCU orientation in this step). The LDO is going to go really close to the USB-C VBUS, and the flash storage will go close to the RP2040's QSPI pins:
+
+![[Pasted image 20250929113626.png]]
+
+I use exact positioning when doing things like this, but you can just draw them on if you want, I just like everything to be nicely symmetrical.
+
+Next, I'm going to put the crystal on. The crystal should be very close to the RP2040 XIN/XOUT pins because it's a very precise signal, and the load capacitors should be RIGHT next to the pins too. You can then just put the resistor right by the XOUT pin of the RP2040:
+
+![[Pasted image 20250929114427.png]]

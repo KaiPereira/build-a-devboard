@@ -3112,7 +3112,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Memory_Flash:W25Q128JVS"
+		(symbol "Memory_Flash:W25Q16JVSS"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3124,7 +3124,7 @@
 					)
 				)
 			)
-			(property "Value" "W25Q128JVS"
+			(property "Value" "W25Q16JVSS"
 				(at 7.62 11.43 0)
 				(effects
 					(font
@@ -3133,7 +3133,7 @@
 				)
 			)
 			(property "Footprint" "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm"
-				(at 0 22.86 0)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3141,8 +3141,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.winbond.com/resource-files/w25q128jv_dtr%20revc%2003272018%20plus.pdf"
-				(at 0 25.4 0)
+			(property "Datasheet" "https://www.winbond.com/hq/support/documentation/levelOne.jsp?__locale=en&DocNo=DA00-W25Q16JV.1"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3150,8 +3150,8 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "128Mbit / 16MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, SOIC-8"
-				(at 0 27.94 0)
+			(property "Description" "16Mbit / 2MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, SOIC-8 (208 mil)"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3159,7 +3159,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "flash memory SPI QPI DTR"
+			(property "ki_keywords" "flash memory SPI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3177,7 +3177,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "W25Q128JVS_0_1"
+			(symbol "W25Q16JVSS_0_1"
 				(rectangle
 					(start -7.62 10.16)
 					(end 10.16 -10.16)
@@ -3190,7 +3190,7 @@
 					)
 				)
 			)
-			(symbol "W25Q128JVS_1_1"
+			(symbol "W25Q16JVSS_1_1"
 				(pin input line
 					(at -10.16 7.62 0)
 					(length 2.54)
@@ -3338,7 +3338,10 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Regulator_Linear:NCP1117-3.3_SOT223"
+		(symbol "Regulator_Linear:MCP1700x-330xxTT"
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3350,7 +3353,7 @@
 					)
 				)
 			)
-			(property "Value" "NCP1117-3.3_SOT223"
+			(property "Value" "MCP1700x-330xxTT"
 				(at 0 3.175 0)
 				(effects
 					(font
@@ -3359,8 +3362,8 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
-				(at 0 5.08 0)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 0 5.715 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3368,16 +3371,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.onsemi.com/pub_link/Collateral/NCP1117-D.PDF"
-				(at 2.54 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "1A Low drop-out regulator, Fixed Output 3.3V, SOT-223"
+			(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/20001826D.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3386,7 +3380,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "REGULATOR LDO 3.3V"
+			(property "Description" "250mA Low Quiscent Current LDO, 3.3V output, SOT-23"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3395,7 +3389,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SOT?223*TabPin2*"
+			(property "ki_keywords" "regulator linear ldo"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3404,10 +3398,19 @@
 					(hide yes)
 				)
 			)
-			(symbol "NCP1117-3.3_SOT223_0_1"
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MCP1700x-330xxTT_0_1"
 				(rectangle
-					(start -5.08 -5.08)
-					(end 5.08 1.905)
+					(start -5.08 1.905)
+					(end 5.08 -5.08)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -3417,7 +3420,7 @@
 					)
 				)
 			)
-			(symbol "NCP1117-3.3_SOT223_1_1"
+			(symbol "MCP1700x-330xxTT_1_1"
 				(pin power_in line
 					(at -7.62 0 0)
 					(length 2.54)
@@ -5396,16 +5399,6 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 33.02) (xy 91.44 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "925ab7a9-b4b6-4319-880f-628623f6e325")
-	)
-	(wire
-		(pts
 			(xy 50.8 50.8) (xy 50.8 53.34)
 		)
 		(stroke
@@ -5503,6 +5496,16 @@
 			(type default)
 		)
 		(uuid "987c227e-0e4b-49c4-84bb-6f8556a8ea3c")
+	)
+	(wire
+		(pts
+			(xy 91.44 33.02) (xy 95.25 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bb9579e-cd86-45a0-add6-211562679f39")
 	)
 	(wire
 		(pts
@@ -8103,94 +8106,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Memory_Flash:W25Q128JVS")
-		(at 259.08 58.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "02a5f435-e942-414f-ac66-c7ff0511d0f1")
-		(property "Reference" "U3"
-			(at 270.51 57.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "W25Q128JVS"
-			(at 270.51 59.6899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm"
-			(at 259.08 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.winbond.com/resource-files/w25q128jv_dtr%20revc%2003272018%20plus.pdf"
-			(at 259.08 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "128Mbit / 16MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, SOIC-8"
-			(at 259.08 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0b4aaecc-3d24-4ab6-bbe4-3ed46959b9ad")
-		)
-		(pin "6"
-			(uuid "26f2ea8a-fdb7-4908-bc44-a8e76f41bfae")
-		)
-		(pin "5"
-			(uuid "0bfa8498-d4d6-4293-8f2b-394a7e3f6712")
-		)
-		(pin "2"
-			(uuid "2690bf64-b459-4564-86e1-78f74e36a361")
-		)
-		(pin "3"
-			(uuid "9d98ccde-1b3c-437a-a9e9-1b1714fdf0fd")
-		)
-		(pin "7"
-			(uuid "70f4e7a4-be38-4886-9755-6e574ce943f9")
-		)
-		(pin "8"
-			(uuid "373a1621-86ba-4a29-b34c-b315383355f1")
-		)
-		(pin "4"
-			(uuid "f357036f-4e51-4a20-af87-45ef1d3009e1")
-		)
-		(instances
-			(project ""
-				(path "/8a2a4d17-ab41-4dea-99ab-88cd6502c408"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 232.41 101.6 90)
 		(unit 1)
@@ -9133,6 +9048,77 @@
 		)
 	)
 	(symbol
+		(lib_id "Regulator_Linear:MCP1700x-330xxTT")
+		(at 83.82 33.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2607f1c5-cb58-4593-9694-6185079b0221")
+		(property "Reference" "U2"
+			(at 83.82 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MCP1700x-330xxTT"
+			(at 83.82 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 83.82 27.305 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/20001826D.pdf"
+			(at 83.82 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "250mA Low Quiscent Current LDO, 3.3V output, SOT-23"
+			(at 83.82 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "7705b8fc-f35d-46ca-b26a-acb550e3fa96")
+		)
+		(pin "2"
+			(uuid "7bbf1c36-274d-4623-bd5d-b69b9da62b18")
+		)
+		(pin "1"
+			(uuid "7d97ee89-941b-47e3-a6d1-152126380684")
+		)
+		(instances
+			(project ""
+				(path "/8a2a4d17-ab41-4dea-99ab-88cd6502c408"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 194.31 31.75 0)
 		(unit 1)
@@ -9736,77 +9722,6 @@
 			(project "devboard"
 				(path "/8a2a4d17-ab41-4dea-99ab-88cd6502c408"
 					(reference "#PWR026")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Regulator_Linear:NCP1117-3.3_SOT223")
-		(at 83.82 33.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4f71beac-b3f8-4ab8-b3d1-c1ec9c1baf2d")
-		(property "Reference" "U2"
-			(at 83.82 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "NCP1117-3.3_SOT223"
-			(at 83.82 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
-			(at 83.82 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.onsemi.com/pub_link/Collateral/NCP1117-D.PDF"
-			(at 86.36 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "1A Low drop-out regulator, Fixed Output 3.3V, SOT-223"
-			(at 83.82 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "5e565ec0-34fc-44c5-aa7e-98b956e2868c")
-		)
-		(pin "2"
-			(uuid "901d71a5-e136-412c-b610-1566e51ebd35")
-		)
-		(pin "1"
-			(uuid "99d57b4e-7327-432a-b875-ccddde66b4d4")
-		)
-		(instances
-			(project ""
-				(path "/8a2a4d17-ab41-4dea-99ab-88cd6502c408"
-					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -11574,6 +11489,94 @@
 			(project ""
 				(path "/8a2a4d17-ab41-4dea-99ab-88cd6502c408"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Memory_Flash:W25Q16JVSS")
+		(at 259.08 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e439e9bb-c01a-4324-b170-38883f7a3e3d")
+		(property "Reference" "U4"
+			(at 270.51 57.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "W25Q16JVUXIQ TR"
+			(at 270.51 59.6899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:Winbond_USON-8-1EP_3x2mm_P0.5mm_EP0.2x1.6mm"
+			(at 259.08 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 259.08 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "8788e31e-0730-4a60-8009-86f685e8bf71")
+		)
+		(pin "8"
+			(uuid "146c4405-e6a6-42c1-8dd0-39ca00ceedd8")
+		)
+		(pin "4"
+			(uuid "4b598f65-dfaa-4e83-b5e8-410f30d006bc")
+		)
+		(pin "3"
+			(uuid "7e9b0171-ece2-4306-926a-2ab449c7aec4")
+		)
+		(pin "2"
+			(uuid "90b9d562-9793-4070-814d-66fcf7bcf0f5")
+		)
+		(pin "6"
+			(uuid "93c451b1-2679-412c-a148-cba60938d6f2")
+		)
+		(pin "1"
+			(uuid "5aaee9a7-2315-4369-ac18-8f4b031596f9")
+		)
+		(pin "7"
+			(uuid "5f6797c9-6765-4fcf-ad12-d32fb20b8729")
+		)
+		(instances
+			(project ""
+				(path "/8a2a4d17-ab41-4dea-99ab-88cd6502c408"
+					(reference "U4")
 					(unit 1)
 				)
 			)
