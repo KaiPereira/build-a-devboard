@@ -361,11 +361,11 @@ Also feel free to mess with layout a bit during this step just so everything fit
 
 First I usually group all the caps that go together, and then I usually either start with the SoC caps, or components caps, I'm going to start with the components caps:
 
-![[Pasted image 20250929120135.png]]
+![Pasted image 20250929120135.png](journal/Pasted%20image%2020250929120135.png)
 
 **Remember, caps go by whatever they're decoupling**. Now all the RP2040 caps are grouped together, and this is because it's just a general rule to have one cap per VDD pin, and then the larger cap/bulk cap near the group of them:
 
-![[Pasted image 20250929121131.png]]
+![Pasted image 20250929121131.png](journal/Pasted%20image%2020250929121131.png)
 
 This is the layout I decided on, some of my thought process for this layout was:
 - Leave enough space to route the USB differential pair
@@ -383,7 +383,7 @@ Now all that's left to add in, is our resistors, but I'm going to actually put t
 
 So, the first thing I'm going to route is my flash memory, I'm going to move the capacitors away temporarily while I do this and then add them back on later. So tap on the **route single track** in the right hand toolbar, and then route all the signals like so:
 
-![[Pasted image 20250929134312.png]]
+![Pasted image 20250929134312.png](journal/Pasted%20image%2020250929134312.png)
 
 I usually start my route from the RP2040, and then put it into the component just because I find it's easier. I always start with routing my higher speed signals, and then do the lower ones.
 
@@ -391,20 +391,20 @@ Next, I'm going to route the USB-C data lines. Now these lines are actually spec
 
 The termination resistors for these data lines also need to be right by the RP2040 pins to smooth the signals. These also need to be placed perfectly evenly apart, centered on the pins so it's easy to route our differential pairs:
 
-![[Pasted image 20250929134841.png]]
+![Pasted image 20250929134841.png](journal/Pasted%20image%2020250929134841.png)
 
 Now to route a differential pair, **hold** the route tracks button, and go over to the symbol with 2 traces on it, or just tap 6. Then, go over to your USB-C, and tap on one of the D+/D- pins to start the trace, and route it down to your resistors. If the traces won't go into your resistors pads, that means that your resistors aren't evenly positioned, you can just the relative positioning tool to do this. 
 
 And then you can just route the resistors nets into the RP2040 nets (Make sure they're centered so the traces are the same length, you could technically do this as a differential pair if you change your schematic slightly, but it's fine if you just position properly):
 
-![[Pasted image 20250929135204.png]]
+![Pasted image 20250929135204.png](journal/Pasted%20image%2020250929135204.png)
 
 Now we need to make sure all these traces are the same sizes, you can check the resistor traces by using the **Tune length of a single track** tool on the right toolbar, they should be the same length if you did it right:
 
-![[Pasted image 20250929135324.png]]
+![Pasted image 20250929135324.png](journal/Pasted%20image%2020250929135324.png)
 
 And then, your USB-C lines, are probably not the same length, so we need to fix that. You can do that by going to **route -> Tune skew of a differential pair** in the top menu, and then selecting the trace with a negative skew, and just tapping it, and then tapping **ok**, and it should make it slightly longer:
 
-![[Pasted image 20250929135538.png]]
+![Pasted image 20250929135538.png](journal/Pasted%20image%2020250929135538.png)
 
 This makes all of our traces the exact same size, so that we have proper data flow!
