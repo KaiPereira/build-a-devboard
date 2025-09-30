@@ -476,3 +476,5 @@ My PCB has 16 errors, yours might have more, but all of these need to be properl
 Most of these are problems with the ground pour, so I'm actually going to modify the ground fill to fix a lot of these errors, I'm changing the thermal relief gap and clearance to 0.3mm instead of 0.5mm which just makes it so the traces and pads can be closer to the fill:
 
 ![[Pasted image 20250929205810.png]]
+
+You'll probably also have a bunch of thermal relief errors. These require some finesse to fix, but essentially you just need to have like a thick enough ground on each component. And you can solve this by adding via's, traces, and a bunch of other stuff like editing the fill. So you'll need to research a bit and try different things to fix these. And not all of them are even too crucial, but I'd suggest fixing them all.
