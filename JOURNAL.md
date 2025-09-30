@@ -590,3 +590,12 @@ Now, tap next, and **congratulations, you're done your PCB!!!!**
 
 ![[Pasted image 20250930161129.png]]
 
+Congratulations on making your first PCB!! I know that this seemed pretty hard and complicated, but it gets so much easier with practice, so keep on making cool stuff!
+
+Now try to challenge yourself in your next endeavor, and don't just make another devboard, try your hand at a motherboard, or a power controller, just something that challenges you and helps you learn!
+
+Feel free to also modify this board you've created to include an LED matrix, motor drivers, literally whatever your heart desires.
+
+I hope you learned alot, if you want to checkout some of the other stuff I've created, check out my projects on [GitHub](https://github.com/KaiPereira) or my personal website https://kaipereira.com/! 
+
+Keep on hacking o7
