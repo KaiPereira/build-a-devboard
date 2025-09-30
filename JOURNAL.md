@@ -447,47 +447,47 @@ This is basically like a giant pool of just ground on our PCB that connects all 
 
 So on the right toolbar, tap **Draw Filled Zone**, and select both layers, with GND as the net, and select *Thermal reliefs* as the Pad connections. Basically, with a ground fill, soldering can become harder because the fill dissipates heat, so doing thermal reliefs puts like less ground area to the hole so it's easier to solder stuff on!
 
-![[Pasted image 20250929171108.png]]
+![Pasted image 20250929171108.png](journal/Pasted%20image%2020250929171108.png)
 
 Then, select the entire PCB with your ground fill, and then tap B to fill it:
 
-![[Pasted image 20250929171800.png]]
+![Pasted image 20250929171800.png](journal/Pasted%20image%2020250929171800.png)
 
 Now you'll notice that all your ground ratliness disappear. Their might be a couple that are still there though, this is because the pads are isolated, so you might need to put a via from the pad onto the ground fill. You also might need to adjust like some of the header pins signals and such to make it work!
 
 I'd also suggest adding via's to all the isolated islands of ground for signal integrity, but this is just good practice, and also putting extra near the SoC and stuff that get's hot like the LDO:
 
-![[Pasted image 20250929172715.png]]
+![Pasted image 20250929172715.png](journal/Pasted%20image%2020250929172715.png)
 
 Next, we'll need to add in our button that we haven't put in yet. Just find a free spot on your PCB for it, I'm going to put mine near the flash memory though because it's got some space and it's a close connection:
 
-![[Pasted image 20250929203934.png]]
+![Pasted image 20250929203934.png](journal/Pasted%20image%2020250929203934.png)
 
 And then, if you just have any ratlines still on the PCB, just connect them up, and you'll be on the final step of designing our PCB:
 
-![[Pasted image 20250929204855.png]]
+![Pasted image 20250929204855.png](journal/Pasted%20image%2020250929204855.png)
 
 Now you probably think, we'll we're done the PCB, what else could there be, well there's actually a couple more things we need to do. The first thing is running DRC to make sure there's no problems with our PCB. So go to the top toolbar, and run DRC:
 
-![[Pasted image 20250929205046.png]]
+![Pasted image 20250929205046.png](journal/Pasted%20image%2020250929205046.png)
 
 My PCB has 16 errors, yours might have more, but all of these need to be properly resolved. The first things I'm going to look at is my unconnected items. These just tell me what I forgot to route, so make sure that you get all those fixed first.
 
 Most of these are problems with the ground pour, so I'm actually going to modify the ground fill to fix a lot of these errors, I'm changing the thermal relief gap and clearance to 0.3mm instead of 0.5mm which just makes it so the traces and pads can be closer to the fill:
 
-![[Pasted image 20250929205810.png]]
+![Pasted image 20250929205810.png](journal/Pasted%20image%2020250929205810.png)
 
 You'll probably also have a bunch of thermal relief errors. These require some finesse to fix, but essentially you just need to have like a thick enough ground on each component. And you can solve this by adding via's, traces, and a bunch of other stuff like editing the fill. So you'll need to research a bit and try different things to fix these. And not all of them are even too crucial, but I'd suggest fixing them all.
 
 The rest of the DRC errors you'll have to figure out, but here's how mine looks with no errors left:
 
-![[Pasted image 20250929210949.png]]
+![Pasted image 20250929210949.png](journal/Pasted%20image%2020250929210949.png)
 
 ## **Congrats on finishing your devboard 🥳**
 
 Now you've finished making your actual PCB, if you want to get an idea of how it'll look when manufactured, you can tap the **3D Viewer** in the top toolbar:
 
-![[Pasted image 20250929211118.png]]
+![Pasted image 20250929211118.png](journal/Pasted%20image%2020250929211118.png)
 
 The headers will be facing the other way and you can't see the USB-C because it doesn't have a 3D model, but this is how your PCB will look! Pretty cool huh, but you know what would make it even cooler... **Art!**
 
