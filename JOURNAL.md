@@ -567,7 +567,26 @@ Now we need to assign the parts that JLCPCB couldn't automatically find and the 
 
 **Also make sure you're using as many basic parts as possible, filter for these so that your PCB is cheaper when selecting parts, but sometimes parts aren't available as basic**
 
-This is what my final BOM looks like, feel free to copy mine (it'll be in my GitHub repository too):
+This is what my final BOM looks like, feel free to copy mine (it'll be in my GitHub repository under /PRODUCTION/files too):
 
-![[Pasted image 20250930154715.png]]
+![[Pasted image 20250930155054.png]]
+
+Now continue on, and don't place the header pins (it'll prompt you), and then you'll see your assembled board show up:
+
+![[Pasted image 20250930155306.png]]
+
+But there's a couple components that aren't properly assembled on our boards so we need to move them manually!
+
+You'll need to move:
+- The USB-C to fit within the holes nicely
+- The LDO just needs to be turned a bit
+- The flash memory needs to be rotated right so that the dot aligns with the triangle
+
+And then everything else you should just double check, but it should be fine:
+
+![[Pasted image 20250930161046.png]]
+
+Now, tap next, and **congratulations, you're done your PCB!!!!**
+
+![[Pasted image 20250930161129.png]]
 
