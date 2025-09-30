@@ -455,6 +455,8 @@ Then, select the entire PCB with your ground fill, and then tap B to fill it:
 
 Now you'll notice that all your ground ratliness disappear. Their might be a couple that are still there though, this is because the pads are isolated, so you might need to put a via from the pad onto the ground fill. You also might need to adjust like some of the header pins signals and such to make it work!
 
-I'd also suggest adding via's to all the isolated islands of ground for signal integrity, but this is just good practice:
+I'd also suggest adding via's to all the isolated islands of ground for signal integrity, but this is just good practice, and also putting extra near the SoC and stuff that get's hot like the LDO:
+
+![[Pasted image 20250929172715.png]]
 
 
