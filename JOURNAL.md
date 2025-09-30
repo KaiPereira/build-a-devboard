@@ -526,12 +526,25 @@ and then export every single thing there, if you want my gerber settings, here t
 
 ![[Pasted image 20250929220810.png]]
 
-and then take all of the files you exported, and compress them into a zip folder, called production:
+And before you turn all these files into a zip, you'll want to modify the CPL file, because JLCPCB expects the CPL file headers to be called something else, so add it into google sheets. This file will be called something like **"your-project-top-pos.csv"**, we're doing one sided assembly so you can delete the bottom file. Anyways change the headers from:
+- Ref -> **Designator**
+- PosX -> **Mid X**
+- PosY -> **Mid Y**
+- Rot -> **Rotation**
+- Side -> **Layer**
 
-![[Pasted image 20250929221056.png]]
+![[Pasted image 20250929223401.png]]
+
+Once you've renamed those headers exactly, export is as a **.csv** and replace your old CPL file with this one. And then take all of the files you exported, and compress them into a zip folder, called "PRODUCTION" or whatever you want really:
+
+![[Pasted image 20250929223554.png]]
 
 And now I usually make another folder called production in my root, and put this zip file inside of there:
 
-![[Pasted image 20250929221142.png]]
+![[Pasted image 20250929223622.png]]
 
-Now head on over to JLCPCB and drag that zip folder into the quote section!
+Now head on over to JLCPCB and drag that zip folder into the quote section. You should see your PCB show up, and the only thing you're going to add onto your order is PCBA, this just makes sure that JLCPCB doesn't just give you the raw PCB, but also assembles it:
+
+![[Pasted image 20250929221835.png]]
+
+![[Pasted image 20250929221852.png]]
