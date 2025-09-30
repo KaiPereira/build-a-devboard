@@ -441,6 +441,20 @@ Now, wire every single header pin on the board, try to keep organized when doing
 
 ![Pasted image 20250929170407.png](journal/Pasted%20image%2020250929170407.png)
 
+And with a bit of finesse, all of our routing is pretty much done, we just have all of our ground signals left. Now you're probably wondering why we didn't route those. Well instead of using wires to do those, we can use what's called a ground fill.
 
+This is basically like a giant pool of just ground on our PCB that connects all of our grounds together. We do this because it helps with signal integrity, and because there's always going to be a lot of ground signals on a PCB. It also helps with thermal regulation!
+
+So on the right toolbar, tap **Draw Filled Zone**, and select both layers, with GND as the net, and select *Thermal reliefs* as the Pad connections. Basically, with a ground fill, soldering can become harder because the fill dissipates heat, so doing thermal reliefs puts like less ground area to the hole so it's easier to solder stuff on!
+
+![[Pasted image 20250929171108.png]]
+
+Then, select the entire PCB with your ground fill, and then tap B to fill it:
+
+![[Pasted image 20250929171800.png]]
+
+Now you'll notice that all your ground ratliness disappear. Their might be a couple that are still there though, this is because the pads are isolated, so you might need to put a via from the pad onto the ground fill. You also might need to adjust like some of the header pins signals and such to make it work!
+
+I'd also suggest adding via's to all the isolated islands of ground for signal integrity, but this is just good practice:
 
 
