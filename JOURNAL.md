@@ -505,5 +505,7 @@ This is how mine looks when done:
 
 ![[Pasted image 20250929211919.png]]
 
-Now, let's add our own art! Try out the KiCad image converter, and also add some text and stuff to your PCB, this is how I did mine:
+Now, let's add our own art! Try out the KiCad image converter, and also add some text and stuff to your PCB. I personally like to add things like my website, github handle, favorite animals, anime, whatever you want really.
+
+I personally use excalidraw to draw my art but you can do whatever:
 
