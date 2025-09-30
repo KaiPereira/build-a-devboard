@@ -1,3 +1,5 @@
+# Let's Design an RP2040 Devboard!
+
 Today, we're going to be designing our own dev board, using one of the most popular and beginner friendly SoC's, the RP2040. This guide doesn't serve as just a tutorial, but also as an opportunity to learn what everything on the PCB fundamentally does, and what every single component on your PCB is actually for!
 
 ![Pasted image 20250930162537.png](journal/Pasted%20image%2020250930162537.png)
