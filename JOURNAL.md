@@ -467,3 +467,12 @@ And then, if you just have any ratlines still on the PCB, just connect them up, 
 
 ![[Pasted image 20250929204855.png]]
 
+Now you probably think, we'll we're done the PCB, what else could there be, well there's actually a couple more things we need to do. The first thing is running DRC to make sure there's no problems with our PCB. So go to the top toolbar, and run DRC:
+
+![[Pasted image 20250929205046.png]]
+
+My PCB has 16 errors, yours might have more, but all of these need to be properly resolved. The first things I'm going to look at is my unconnected items. These just tell me what I forgot to route, so make sure that you get all those fixed first.
+
+Most of these are problems with the ground pour, so I'm actually going to modify the ground fill to fix a lot of these errors, I'm changing the thermal relief gap and clearance to 0.3mm instead of 0.5mm which just makes it so the traces and pads can be closer to the fill:
+
+![[Pasted image 20250929205810.png]]
