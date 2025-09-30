@@ -397,23 +397,23 @@ The termination resistors for these data lines also need to be right by the RP20
 
 Now to route a differential pair. First wire the USB D+'s/D-'s together:
 
-![[Pasted image 20250929163018.png]]
+![Pasted image 20250929163018.png](journal/Pasted%20image%2020250929163018.png)
 
 Then, **hold** the route tracks button, and go over to the symbol with 2 traces on it, or just tap 6. Then, go over to your USB-C, and tap on one of the D+/D- pins to start the trace, and route it down to your resistors. If the traces won't go into your resistors pads, that means that your resistors aren't evenly positioned, you can just the relative positioning tool to do this. 
 
 And then you can just route the resistors nets into the RP2040 nets (Make sure they're centered so the traces are the same length, you could technically do this as a differential pair if you change your schematic slightly, but it's fine if you just position properly):
 
-![[Pasted image 20250929163304.png]]
+![Pasted image 20250929163304.png](journal/Pasted%20image%2020250929163304.png)
 
 I added left a space inside of the USB traces for the decoupling capacitors to go.
 
 Now we need to make sure all these traces are the same sizes, you can check the resistor traces by using the **Tune length of a single track** tool on the right toolbar, they should be the same length if you did it right:
 
-![[Pasted image 20250929155154.png]]
+![Pasted image 20250929155154.png](journal/Pasted%20image%2020250929155154.png)
 
 And then, your USB-C lines, are probably not the same length, so we need to fix that. You can do that by going to **route -> Tune skew of a differential pair** in the top menu, and then selecting the trace with a negative skew, and just tapping it, and then tapping **ok**, and it should make it slightly longer:
 
-![[Pasted image 20250929163336.png]]
+![Pasted image 20250929163336.png](journal/Pasted%20image%2020250929163336.png)
 
 This makes all of our traces the exact same size, so that we have proper data flow! 
 
@@ -423,23 +423,23 @@ Now that we have our fast signals on the PCB, the other signals are fine to go t
 
 **Leave all of the grounds for last, I'll explain this soon**
 
-![[Pasted image 20250929161759.png]]
+![Pasted image 20250929161759.png](journal/Pasted%20image%2020250929161759.png)
 
 Now my routing of course isn't perfect, but I did manage to get it pretty nice and tight. You'll notice some blue on the PCB, and that's me routing on the other layer. You can change layers by tapping the other layer on the right layers view, or by tapping V. But for SMD components, you'll need what's called a VIA in order to get to the other layer, which is essentially just a hole. Feel free to use the backside for routing if you don't have any space!
 
 Anyways, next I'm going to route the crystal, the USB-C pulldowns, and button pull ups, and then I'm going to leave the button/button resistor for very last because there's no specific spot that needs to be:
 
-![[Pasted image 20250929163631.png]]
+![Pasted image 20250929163631.png](journal/Pasted%20image%2020250929163631.png)
 
 Next, we're going to route power to our board, I'm distributing power to the main cluster of VDD pins, and then once I'm finished routing the other signals, I'm going to route it to the other pins, just so power is even about my board:
 
-![[Pasted image 20250929164321.png]]
+![Pasted image 20250929164321.png](journal/Pasted%20image%2020250929164321.png)
 
 Now, wire every single header pin on the board, try to keep organized when doing this, and save via's/the other layer for last:
 
-![[Pasted image 20250929165330.png]]
+![Pasted image 20250929165330.png](journal/Pasted%20image%2020250929165330.png)
 
-![[Pasted image 20250929170407.png]]
+![Pasted image 20250929170407.png](journal/Pasted%20image%2020250929170407.png)
 
 
 
