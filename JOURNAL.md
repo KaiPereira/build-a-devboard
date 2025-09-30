@@ -459,4 +459,11 @@ I'd also suggest adding via's to all the isolated islands of ground for signal i
 
 ![[Pasted image 20250929172715.png]]
 
+Next, we'll need to add in our button that we haven't put in yet. Just find a free spot on your PCB for it, I'm going to put mine near the flash memory though because it's got some space and it's a close connection:
+
+![[Pasted image 20250929203934.png]]
+
+And then, if you just have any ratlines still on the PCB, just connect them up, and you'll be on the final step of designing our PCB:
+
+![[Pasted image 20250929204855.png]]
 
