@@ -380,6 +380,8 @@ Now all that's left to add in, is our resistors, but I'm going to actually put t
 - Never have a trace at a 90 degree angle, these mess with your signals, and also sometimes get manufactured weirdly
 - Think about what you're going to route next, so that you don't route where that trace needs to go
 - Know what you're routing, things like decoupling caps need to have short, small traces, etc.
+- Never put via's on pads, this makes it hard to solder them, and makes the component unstable
+- Try to route front signals vertically, and back signals horizontally, this isn't a fixed rule, but just try to do it in most spots to have efficient routing
 
 So, the first thing I'm going to route is my flash memory, I'm going to move the capacitors away temporarily while I do this and then add them back on later. So tap on the **route single track** in the right hand toolbar, and then route all the signals like so:
 
@@ -425,7 +427,19 @@ Now that we have our fast signals on the PCB, the other signals are fine to go t
 
 Now my routing of course isn't perfect, but I did manage to get it pretty nice and tight. You'll notice some blue on the PCB, and that's me routing on the other layer. You can change layers by tapping the other layer on the right layers view, or by tapping V. But for SMD components, you'll need what's called a VIA in order to get to the other layer, which is essentially just a hole. Feel free to use the backside for routing if you don't have any space!
 
-Anyways, next I'm going to route the crystal and then add the rest of the resistors, and then I'm going to leave the button/button resistor for very last because there's no specific spot that needs to be:
+Anyways, next I'm going to route the crystal, the USB-C pulldowns, and button pull ups, and then I'm going to leave the button/button resistor for very last because there's no specific spot that needs to be:
+
+![[Pasted image 20250929163631.png]]
+
+Next, we're going to route power to our board, I'm distributing power to the main cluster of VDD pins, and then once I'm finished routing the other signals, I'm going to route it to the other pins, just so power is even about my board:
+
+![[Pasted image 20250929164321.png]]
+
+Now, wire every single header pin on the board, try to keep organized when doing this, and save via's/the other layer for last:
+
+![[Pasted image 20250929165330.png]]
+
+![[Pasted image 20250929170407.png]]
 
 
 
