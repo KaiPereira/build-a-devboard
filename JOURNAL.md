@@ -535,7 +535,11 @@ And before you turn all these files into a zip, you'll want to modify the CPL fi
 
 ![[Pasted image 20250929223401.png]]
 
-Once you've renamed those headers exactly, export is as a **.csv** and replace your old CPL file with this one. And then take all of the files you exported, and compress them into a zip folder, called "PRODUCTION" or whatever you want really:
+Next, you need to replace the headers on your BOM file, this is just changing **Designation -> Comment**
+
+![[Pasted image 20250930151428.png]]
+
+Once you've renamed those headers exactly, export is as a **.csv** and replace your old CPL/BOM file with this one. And then take all of the files you exported, and compress them into a zip folder, called "PRODUCTION" or whatever you want really:
 
 ![[Pasted image 20250929223554.png]]
 
@@ -548,3 +552,5 @@ Now head on over to JLCPCB and drag that zip folder into the quote section. You 
 ![[Pasted image 20250929221835.png]]
 
 ![[Pasted image 20250929221852.png]]
+
+Now tap next, and then add your BOM, and the CPL CSV you just created. If you have any errors when uploading this, check the internet, double check you modified the CPL properly, and worst case, tap the chat button on the website.
