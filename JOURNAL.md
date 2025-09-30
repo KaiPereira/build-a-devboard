@@ -478,3 +478,19 @@ Most of these are problems with the ground pour, so I'm actually going to modify
 ![[Pasted image 20250929205810.png]]
 
 You'll probably also have a bunch of thermal relief errors. These require some finesse to fix, but essentially you just need to have like a thick enough ground on each component. And you can solve this by adding via's, traces, and a bunch of other stuff like editing the fill. So you'll need to research a bit and try different things to fix these. And not all of them are even too crucial, but I'd suggest fixing them all.
+
+The rest of the DRC errors you'll have to figure out, but here's how mine looks with no errors left:
+
+![[Pasted image 20250929210949.png]]
+
+## **Congrats on finishing your devboard 🥳**
+
+Now you've finished making your actual PCB, if you want to get an idea of how it'll look when manufactured, you can tap the **3D Viewer** in the top toolbar:
+
+![[Pasted image 20250929211118.png]]
+
+The headers will be facing the other way and you can't see the USB-C because it doesn't have a 3D model, but this is how your PCB will look! Pretty cool huh, but you know what would make it even cooler... **Art!**
+
+## Working on silkscreen
+
+Now before we get all excited, let's polish up our PCB a little bit
