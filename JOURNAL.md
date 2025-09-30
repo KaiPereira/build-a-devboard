@@ -569,11 +569,11 @@ Now we need to assign the parts that JLCPCB couldn't automatically find and the 
 
 This is what my final BOM looks like, feel free to copy mine (it'll be in my GitHub repository under /PRODUCTION/files too):
 
-![[Pasted image 20250930155054.png]]
+![Pasted image 20250930155054.png](journal/Pasted%20image%2020250930155054.png)
 
 Now continue on, and don't place the header pins (it'll prompt you), and then you'll see your assembled board show up:
 
-![[Pasted image 20250930155306.png]]
+![Pasted image 20250930155306.png](journal/Pasted%20image%2020250930155306.png)
 
 But there's a couple components that aren't properly assembled on our boards so we need to move them manually!
 
@@ -584,11 +584,11 @@ You'll need to move:
 
 And then everything else you should just double check, but it should be fine:
 
-![[Pasted image 20250930161046.png]]
+![Pasted image 20250930161046.png](journal/Pasted%20image%2020250930161046.png)
 
 Now, tap next, and **congratulations, you're done your PCB!!!!**
 
-![[Pasted image 20250930161129.png]]
+![Pasted image 20250930161129.png](journal/Pasted%20image%2020250930161129.png)
 
 Congratulations on making your first PCB!! I know that this seemed pretty hard and complicated, but it gets so much easier with practice, so keep on making cool stuff!
 
