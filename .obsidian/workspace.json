@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "JOURNAL"
             }
+          },
+          {
+            "id": "45729f8310e64066",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "JOURNAL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "JOURNAL"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,27 +186,27 @@
   },
   "active": "e286d62c253c0238",
   "lastOpenFiles": [
-    "JOURNAL.md~",
+    "PRODUCTION/files/devboard.xml",
+    "PRODUCTION/files/devboard.rpt",
+    "PRODUCTION/files/devboard.d356",
+    "PRODUCTION/files/devboard-odb.zip",
+    "PRODUCTION/files/devboard-job.gbrjob",
+    "PRODUCTION/files/devboard-PTH.drl",
+    "PRODUCTION/files/devboard-NPTH.drl",
+    "PRODUCTION/files/devboard-F_Silkscreen.gbr",
+    "PRODUCTION/files/devboard-F_Paste.gbr",
+    "PRODUCTION/files/devboard-F_Mask.gbr",
+    "PRODUCTION/files/devboard-F_Cu.gbr",
+    "journal/Pasted image 20250930154715.png",
     "journal/Pasted image 20250930153449.png",
+    "JOURNAL.md",
     "journal/Pasted image 20250930153002.png",
-    "PCB_DESIGN/fp-info-cache5mi0pC",
-    "PCB_DESIGN/~devboard.kicad_pcb.lck",
-    "PCB_DESIGN/~devboard.kicad_sch.lck",
-    "PCB_DESIGN/~devboard.kicad_pro.lck",
     "journal/Pasted image 20250930151803.png",
-    "PCB_DESIGN/devboard-backups/devboard-2025-09-30_151559.zip",
-    "PRODUCTION/PRODUCTION/PRODUCTION.zip",
-    "PRODUCTION/PRODUCTION/BOM.csv",
-    "PRODUCTION/PRODUCTION/New BOM file for devboard - devboard.csv",
     "journal/Pasted image 20250930151428.png",
     "journal/Pasted image 20250930151400.png",
-    "PCB_DESIGN/fp-info-cache1u4Wv9",
-    "PRODUCTION/PRODUCTION/devboard-PTH.drl",
     "journal/Pasted image 20250929223622.png",
     "Pasted image 20250929223622.png",
     "journal/Pasted image 20250929223554.png",
-    "journal/Pasted image 20250929223401.png",
-    "journal/Pasted image 20250929221852.png",
-    "JOURNAL.md"
+    "journal/Pasted image 20250929223401.png"
   ]
 }

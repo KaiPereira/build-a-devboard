@@ -563,9 +563,11 @@ If you did everything properly though, you should be presented with the JLCPCB B
 
 Now we need to assign the parts that JLCPCB couldn't automatically find and the ones it got wrong. In most cases this is just a quick search and then tapping the first result, but make sure what you select is exactly what you actually want. The 27 ohm termination resistor is also probably going to be wrong, so you'll want to re-assigned this to a proper 27 ohm resistor.
 
-**Make sure not to select the pin headers for PCBA, these are easy to solder our self and aren't worth it to pay for, just buy these separately**
+**Make sure not to select the pin headers for PCBA, these are easy to solder our self and aren't worth it to pay for, just buy these separately.**
 
-This is what my final BOM looks like (it'll be in my GitHub repository too):
+**Also make sure you're using as many basic parts as possible, filter for these so that your PCB is cheaper when selecting parts, but sometimes parts aren't available as basic**
 
-![Pasted image 20250930153449.png](journal/Pasted%20image%2020250930153449.png)
+This is what my final BOM looks like, feel free to copy mine (it'll be in my GitHub repository too):
+
+![[Pasted image 20250930154715.png]]
 
