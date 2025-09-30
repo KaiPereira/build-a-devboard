@@ -509,3 +509,6 @@ Now, let's add our own art! Try out the KiCad image converter, and also add some
 
 I personally use excalidraw to draw my art but you can do whatever:
 
+![[Pasted image 20250929215517.png]]
+
+![[Pasted image 20250929215558.png]]![[Pasted image 20250929215613.png]]
