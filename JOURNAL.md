@@ -553,4 +553,17 @@ Now head on over to JLCPCB and drag that zip folder into the quote section. You 
 
 ![[Pasted image 20250929221852.png]]
 
-Now tap next, and then add your BOM, and the CPL CSV you just created. If you have any errors when uploading this, check the internet, double check you modified the CPL properly, and worst case, tap the chat button on the website.
+Now tap next, and then add your BOM, and the CPL CSV you just created. If you have any errors when uploading this, check the internet, double check you modified the CPL/BOM properly, and worst case, tap the chat button on the website and ask the JLCPCB help desk.
+
+If you did everything properly though, you should be presented with the JLCPCB BOM page:
+
+![[Pasted image 20250930151803.png]]
+
+Now we need to assign the parts that JLCPCB couldn't automatically find and the ones it got wrong. In most cases this is just a quick search and then tapping the first result, but make sure what you select is exactly what you actually want. The 27 ohm termination resistor is also probably going to be wrong, so you'll want to re-assigned this to a proper 27 ohm resistor.
+
+**Make sure not to select the pin headers for PCBA, these are easy to solder our self and aren't worth it to pay for, just buy these separately**
+
+This is what my final BOM looks like (it'll be in my GitHub repository too):
+
+![[Pasted image 20250930153449.png]]
+
