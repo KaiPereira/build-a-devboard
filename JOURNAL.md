@@ -499,19 +499,21 @@ But before we get to make the art, let's move all the labels on our PCB to look 
 
 I'd suggest hiding some layers to make it easier to see, so delete all the stuff we don't want, and organize the stuff we do want (You can also hide the fab layer for now, but there's no need to delete that stuff, it won't be on your PCB):
 
-![[Pasted image 20250929211638.png]]
+![Pasted image 20250929211638.png](journal/Pasted%20image%2020250929211638.png)
 
 This is how mine looks when done:
 
-![[Pasted image 20250929211919.png]]
+![Pasted image 20250929211919.png](journal/Pasted%20image%2020250929211919.png)
 
 Now, let's add our own art! Try out the KiCad image converter, and also add some text and stuff to your PCB. I personally like to add things like my website, github handle, favorite animals, anime, whatever you want really.
 
 I personally use excalidraw to draw my art but you can do whatever:
 
-![[Pasted image 20250929215517.png]]
+![Pasted image 20250929215517.png](journal/Pasted%20image%2020250929215517.png)
 
-![[Pasted image 20250929215558.png]]![[Pasted image 20250929215613.png]]
+![Pasted image 20250929215558.png](journal/Pasted%20image%2020250929215558.png)
+
+![Pasted image 20250929215613.png](journal/Pasted%20image%2020250929215613.png)
 
 **And that's our PCB finished!** Run DRC one last time to make sure you have *no errors*, and then continue on to the final step, which is getting this thing manufactured!
 
@@ -524,7 +526,7 @@ File -> Fabrication Outputs
 
 and then export every single thing there, if you want my gerber settings, here they are:
 
-![[Pasted image 20250929220810.png]]
+![Pasted image 20250929220810.png](journal/Pasted%20image%2020250929220810.png)
 
 And before you turn all these files into a zip, you'll want to modify the CPL file, because JLCPCB expects the CPL file headers to be called something else, so add it into google sheets. This file will be called something like **"your-project-top-pos.csv"**, we're doing one sided assembly so you can delete the bottom file. Anyways change the headers from:
 - Ref -> **Designator**
@@ -533,31 +535,31 @@ And before you turn all these files into a zip, you'll want to modify the CPL fi
 - Rot -> **Rotation**
 - Side -> **Layer**
 
-![[Pasted image 20250929223401.png]]
+![Pasted image 20250929223401.png](journal/Pasted%20image%2020250929223401.png)
 
 Next, you need to replace the headers on your BOM file, this is just changing **Designation -> Comment**
 
-![[Pasted image 20250930151428.png]]
+![Pasted image 20250930151428.png](journal/Pasted%20image%2020250930151428.png)
 
 Once you've renamed those headers exactly, export is as a **.csv** and replace your old CPL/BOM file with this one. And then take all of the files you exported, and compress them into a zip folder, called "PRODUCTION" or whatever you want really:
 
-![[Pasted image 20250929223554.png]]
+![Pasted image 20250929223554.png](journal/Pasted%20image%2020250929223554.png)
 
 And now I usually make another folder called production in my root, and put this zip file inside of there:
 
-![[Pasted image 20250929223622.png]]
+![Pasted image 20250929223622.png](journal/Pasted%20image%2020250929223622.png)
 
 Now head on over to JLCPCB and drag that zip folder into the quote section. You should see your PCB show up, and the only thing you're going to add onto your order is PCBA, this just makes sure that JLCPCB doesn't just give you the raw PCB, but also assembles it:
 
-![[Pasted image 20250929221835.png]]
+![Pasted image 20250929221835.png](journal/Pasted%20image%2020250929221835.png)
 
-![[Pasted image 20250929221852.png]]
+![Pasted image 20250929221852.png](journal/Pasted%20image%2020250929221852.png)
 
 Now tap next, and then add your BOM, and the CPL CSV you just created. If you have any errors when uploading this, check the internet, double check you modified the CPL/BOM properly, and worst case, tap the chat button on the website and ask the JLCPCB help desk.
 
 If you did everything properly though, you should be presented with the JLCPCB BOM page:
 
-![[Pasted image 20250930151803.png]]
+![Pasted image 20250930151803.png](journal/Pasted%20image%2020250930151803.png)
 
 Now we need to assign the parts that JLCPCB couldn't automatically find and the ones it got wrong. In most cases this is just a quick search and then tapping the first result, but make sure what you select is exactly what you actually want. The 27 ohm termination resistor is also probably going to be wrong, so you'll want to re-assigned this to a proper 27 ohm resistor.
 
@@ -565,5 +567,5 @@ Now we need to assign the parts that JLCPCB couldn't automatically find and the 
 
 This is what my final BOM looks like (it'll be in my GitHub repository too):
 
-![[Pasted image 20250930153449.png]]
+![Pasted image 20250930153449.png](journal/Pasted%20image%2020250930153449.png)
 
