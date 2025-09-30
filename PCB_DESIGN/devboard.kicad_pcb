@@ -140,6 +140,7 @@
 		(property "Reference" "C6"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9d842403-015b-43b1-ae75-a4c0ee94b2c6")
 			(effects
 				(font
@@ -339,6 +340,7 @@
 		(property "Reference" "C5"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "79efebf3-15cc-4686-8e1d-9188613741f1")
 			(effects
 				(font
@@ -538,6 +540,7 @@
 		(property "Reference" "C13"
 			(at 0 -1.43 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9c603527-195c-4165-8176-ce3b61846b65")
 			(effects
 				(font
@@ -737,6 +740,7 @@
 		(property "Reference" "C4"
 			(at 0 -1.16 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "301ea8e9-0bfb-492a-b773-fb417d744073")
 			(effects
 				(font
@@ -936,6 +940,7 @@
 		(property "Reference" "C2"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9a9ef974-7c3e-4c3a-8f10-15a92322bd38")
 			(effects
 				(font
@@ -1298,7 +1303,8 @@
 		(property "Reference" "C1"
 			(at 0 -1.16 45)
 			(layer "F.SilkS")
-			(uuid "d17dd9ce-3f09-41da-ae7e-aa336d4cc8a8")
+			(hide yes)
+			(uuid "db2b46b2-1c38-471a-8c45-b5a5e897fe9b")
 			(effects
 				(font
 					(size 1 1)
@@ -1309,7 +1315,7 @@
 		(property "Value" "1uF"
 			(at 0 1.16 45)
 			(layer "F.Fab")
-			(uuid "ad82d46d-f03d-4eb3-bb04-e38e03f8ba69")
+			(uuid "6aa45112-aaf1-4fa6-8030-402a57bf8fdd")
 			(effects
 				(font
 					(size 1 1)
@@ -1321,7 +1327,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "45f7c30f-d612-44aa-b172-eb0f1ea84cb2")
+			(uuid "4fac7450-5d86-4f6e-921d-197d54517e9f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1333,7 +1339,7 @@
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bc32e0ab-46bc-412f-ba9e-3d574ac0a9f2")
+			(uuid "75b90a38-2fec-41e7-b21f-aeae0db16133")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1497,6 +1503,7 @@
 		(property "Reference" "C7"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "00694280-1c2d-4231-b58d-55a6767ca98b")
 			(effects
 				(font
@@ -1696,6 +1703,7 @@
 		(property "Reference" "R7"
 			(at 0 -1.17 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7f4cae68-27a2-4ce8-934b-c614909400d5")
 			(effects
 				(font
@@ -1705,7 +1713,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 0 1.17 0)
+			(at -1.695 -0.17 0)
 			(layer "F.Fab")
 			(uuid "e9a24f19-fc8d-486f-9888-046281e21009")
 			(effects
@@ -1895,6 +1903,7 @@
 		(property "Reference" "C15"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "ad3e2644-41a7-4609-ae2a-e44d8c428302")
 			(effects
 				(font
@@ -2293,6 +2302,7 @@
 		(property "Reference" "C11"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "74dbcdfa-b9b3-4f96-9f5b-9a6f9e551d28")
 			(effects
 				(font
@@ -2492,6 +2502,7 @@
 		(property "Reference" "C10"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "4778b1c0-ab1d-4599-a25b-0e517280553d")
 			(effects
 				(font
@@ -2689,7 +2700,7 @@
 		(descr "http://www.alps.com/prod/info/E/HTML/Tact/SurfaceMount/SKRK/SKRKAHE020.html")
 		(tags "SMD SMT button")
 		(property "Reference" "SW1"
-			(at 0 -2.25 90)
+			(at -3.25 -0.075 180)
 			(layer "F.SilkS")
 			(uuid "5c1c2d76-7f48-4301-8b7e-f728812fac88")
 			(effects
@@ -2942,7 +2953,7 @@
 		(descr "Through hole straight pin header, 1x03, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x03 2.54mm single row")
 		(property "Reference" "J4"
-			(at 0 -2.38 90)
+			(at 2.39 2.465 180)
 			(layer "F.SilkS")
 			(uuid "f3526671-6273-4d48-85e2-7d8fecd5c894")
 			(effects
@@ -3208,6 +3219,7 @@
 		(property "Reference" "R5"
 			(at 0 -1.17 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9fc814fe-d79d-45fa-91dc-dfd152611699")
 			(effects
 				(font
@@ -3407,6 +3419,7 @@
 		(property "Reference" "C14"
 			(at 0 -1.43 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "9c7e9560-88af-4c71-adc6-794b887d5125")
 			(effects
 				(font
@@ -3604,8 +3617,9 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R2"
-			(at 0 -1.17 90)
+			(at 0 -1.435 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "204db970-9519-4fe0-bad3-ec712f3da95d")
 			(effects
 				(font
@@ -3805,7 +3819,8 @@
 		(property "Reference" "R3"
 			(at 0 -1.17 90)
 			(layer "F.SilkS")
-			(uuid "d0cddee7-1001-47a0-865e-1a5d50e4d6c5")
+			(hide yes)
+			(uuid "c677be4c-9078-4044-bccf-a0db6cf24c19")
 			(effects
 				(font
 					(size 1 1)
@@ -3817,7 +3832,7 @@
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5ecaacf5-3c5c-4da4-99f6-260578a9a1e8")
+			(uuid "be63de6f-37b2-4452-a05f-8d9c9ddc9dd9")
 			(effects
 				(font
 					(size 1 1)
@@ -3829,7 +3844,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "bba171df-1d14-4aac-be70-d91f1c0a59c8")
+			(uuid "c363a63d-8fd9-4c0e-9584-966824918d39")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3841,7 +3856,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "554c96b3-28de-411c-84d2-ee71a5fcf97d")
+			(uuid "65a369d3-752d-4d88-aadc-641249f98b1c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4003,7 +4018,7 @@
 		(descr "QFN, 56 Pin (https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf#page=634), generated with kicad-footprint-generator ipc_noLead_generator.py")
 		(tags "QFN NoLead")
 		(property "Reference" "U1"
-			(at 0 -4.83 0)
+			(at -2.175 -4.83 0)
 			(layer "F.SilkS")
 			(uuid "cbc256d1-51e6-4a0a-a514-ea5655b19f32")
 			(effects
@@ -4987,7 +5002,7 @@
 		(descr "USB Type-C receptacle for USB 2.0 and PD, http://www.krhro.com/uploads/soft/180320/1-1P320120243.pdf")
 		(tags "usb usb-c 2.0 pd")
 		(property "Reference" "J1"
-			(at 0 -5.645 0)
+			(at 0 -6 0)
 			(layer "F.SilkS")
 			(uuid "928d90ae-2aee-470d-a869-1a1cfcce855b")
 			(effects
@@ -5402,6 +5417,7 @@
 		(property "Reference" "C16"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "53c8b305-f9a1-4437-9d28-88b90db95834")
 			(effects
 				(font
@@ -5601,6 +5617,7 @@
 		(property "Reference" "C9"
 			(at 0 -1.16 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "d1928367-3a8b-4722-86cb-9cf4f48af053")
 			(effects
 				(font
@@ -5798,7 +5815,7 @@
 		(descr "Through hole straight pin header, 1x20, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x20 2.54mm single row")
 		(property "Reference" "J3"
-			(at 0 -2.38 0)
+			(at -2.665 -0.47 0)
 			(layer "F.SilkS")
 			(uuid "5186f2ec-519c-4592-82d2-a5c171b97a91")
 			(effects
@@ -6249,8 +6266,9 @@
 		(descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R1"
-			(at 0 -1.17 90)
+			(at 1.41 -0.675 180)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "12ed8352-71ae-49b4-9712-418a266207f1")
 			(effects
 				(font
@@ -6450,6 +6468,7 @@
 		(property "Reference" "C12"
 			(at 0 -1.16 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "68a1da81-5519-4620-af67-544bd2e4fe04")
 			(effects
 				(font
@@ -6649,7 +6668,8 @@
 		(property "Reference" "C8"
 			(at 0 -1.16 0)
 			(layer "F.SilkS")
-			(uuid "11c9fda9-6f84-43d9-b1a3-91a61b1b8a64")
+			(hide yes)
+			(uuid "6b2e7b13-a3ff-4cef-9b02-cb6e804b6d5e")
 			(effects
 				(font
 					(size 1 1)
@@ -6660,7 +6680,7 @@
 		(property "Value" "0.1uF"
 			(at 0 1.16 0)
 			(layer "F.Fab")
-			(uuid "65c359d8-1e6b-4045-b102-63c3927641df")
+			(uuid "243ffaf2-6726-4be7-ada3-79521000d523")
 			(effects
 				(font
 					(size 1 1)
@@ -6672,7 +6692,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "47528d5c-ce8f-4646-83f1-72babb9f69e7")
+			(uuid "26b25b51-a1c0-4de3-8dc8-17bb36fc84f4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6684,7 +6704,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e1993d26-d6a6-4b04-9bcd-d685c0c350fd")
+			(uuid "c11d99a5-c1cf-4f46-97d2-552d9bec89ca")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6848,7 +6868,8 @@
 		(property "Reference" "R4"
 			(at 0 -1.17 90)
 			(layer "F.SilkS")
-			(uuid "e3faf09f-e738-470a-a7fd-4cbc25edf3ae")
+			(hide yes)
+			(uuid "12816a2f-d1cf-4d47-a5e5-3136319ef920")
 			(effects
 				(font
 					(size 1 1)
@@ -6859,7 +6880,7 @@
 		(property "Value" "27"
 			(at 0 1.17 90)
 			(layer "F.Fab")
-			(uuid "a83853ea-8fcb-44f2-8b00-00da355ea097")
+			(uuid "80b4663d-57b3-4612-aaa0-11b6c31d9ab2")
 			(effects
 				(font
 					(size 1 1)
@@ -6871,7 +6892,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b23eb232-4abe-4459-ab45-b6b81a2984f4")
+			(uuid "2b6dde84-b986-4cfa-bd1f-aad460835351")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6883,7 +6904,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "85ce3747-497f-4b12-b5fc-dce72cd1a208")
+			(uuid "9c312621-96f4-4f06-8f64-a847763e4068")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7047,6 +7068,7 @@
 		(property "Reference" "C17"
 			(at 0 -1.16 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "6ee7340d-12bd-47b7-8de6-6e53fd147cb2")
 			(effects
 				(font
@@ -7244,7 +7266,7 @@
 		(descr "Through hole straight pin header, 1x20, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x20 2.54mm single row")
 		(property "Reference" "J2"
-			(at 0 -2.38 0)
+			(at 2.615 -0.57 0)
 			(layer "F.SilkS")
 			(uuid "2500a064-103f-4d34-9b08-b134e9dcbc8d")
 			(effects
@@ -7695,7 +7717,7 @@
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U2"
-			(at 0 -2.4 90)
+			(at 0.05 -2.725 180)
 			(layer "F.SilkS")
 			(uuid "d118cefd-bff2-4412-b001-80e05e88a454")
 			(effects
@@ -8030,6 +8052,7 @@
 		(property "Reference" "C3"
 			(at 0 -1.16 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7552e5c2-e94d-442b-b165-0527d6811521")
 			(effects
 				(font
@@ -8227,7 +8250,7 @@
 		(descr "Winbond  USON, 8 Pin (https://www.lcsc.com/datasheet/lcsc_datasheet_2205122030_Winbond-Elec-W25Q16JVUXIQ_C2843335.pdf#page=66f), generated with kicad-footprint-generator ipc_noLead_generator.py")
 		(tags "Winbond USON NoLead")
 		(property "Reference" "U4"
-			(at 0 -1.95 0)
+			(at -0.275 -3.125 0)
 			(layer "F.SilkS")
 			(uuid "9b30f314-88ad-4599-88de-380896d20fc5")
 			(effects
