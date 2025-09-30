@@ -512,3 +512,26 @@ I personally use excalidraw to draw my art but you can do whatever:
 ![[Pasted image 20250929215517.png]]
 
 ![[Pasted image 20250929215558.png]]![[Pasted image 20250929215613.png]]
+
+**And that's our PCB finished!** Run DRC one last time to make sure you have *no errors*, and then continue on to the final step, which is getting this thing manufactured!
+
+## Fabrication time!
+
+Now that we've finished our PCB, let's get it fabricated. Save your PCB, and then go to:
+```
+File -> Fabrication Outputs
+```
+
+and then export every single thing there, if you want my gerber settings, here they are:
+
+![[Pasted image 20250929220810.png]]
+
+and then take all of the files you exported, and compress them into a zip folder, called production:
+
+![[Pasted image 20250929221056.png]]
+
+And now I usually make another folder called production in my root, and put this zip file inside of there:
+
+![[Pasted image 20250929221142.png]]
+
+Now head on over to JLCPCB and drag that zip folder into the quote section!
