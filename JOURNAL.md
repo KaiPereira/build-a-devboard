@@ -1,5 +1,7 @@
 Today, we're going to be designing our own dev board, using one of the most popular and beginner friendly SoC's, the RP2040. This guide doesn't serve as just a tutorial, but also as an opportunity to learn what everything on the PCB fundamentally does, and what every single component on your PCB is actually for!
 
+![Pasted image 20250930162537.png](journal/Pasted%20image%2020250930162537.png)
+
 Now let's start off with the basic question, what's an SoC! An SoC or system on chip, basically has all the basic components like SRAM, processors, USB controllers, and other peripherals you'll break out onto your board. The RP2040 is a good starting microcontroller, because the datasheets are simple, it's low-cost, has good on-chip memory and is really flexible with plenty of IO's.
 
 Now let's get right into it, we'll be using KiCad for this tutorial, and I would suggest completing the hackpad tutorial and maybe a keyboard before trying to make your own devboard, not because you won't be able to make it, but you'll understand how it works a bit better.
@@ -11,11 +13,13 @@ After that, double click your schematic to start working on your PCB. PCB's esse
 
 The schematic is basically a wiring diagram, that shows how everything will connect, but isn't like exactly where the components are placed or how thick your traces are, it's solely to show how everything is wired, not where.
 
-ADD IMAGE HERE
+*This is how are schematic will look when done the tutorial*
+
+![Pasted image 20250930162101.png](journal/Pasted%20image%2020250930162101.png)
 
 The PCB editor is where you'll place down all your components and route everything for when you get it actually manufactured.
 
-ADD IMAGE HERE OF FINAL THING
+![Pasted image 20250930162139.png](journal/Pasted%20image%2020250930162139.png)
 
 ## Starting the schematic
 
