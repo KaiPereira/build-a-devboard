@@ -503,7 +503,7 @@ Now you've finished making your actual PCB, if you want to get an idea of how it
 
 ![Pasted image 20250929211118.png](journal/Pasted%20image%2020250929211118.png)
 
-The headers will be facing the other way and you can't see the USB-C because it doesn't have a 3D model, but this is how your PCB will look! Pretty cool huh, but you know what would make it even cooler... **Art!**
+The headers will be facing the other way and you can't see the USB-C because it doesn't have a 3D model, but this is how your PCB will look. If you want the header pins to actually be right, you might be able to flip them on your PCB, or double tap the footprint and directly change it! Pretty cool huh, but you know what would make it even cooler... **Art!**
 
 ## Working on silkscreen
 
@@ -542,6 +542,8 @@ and then export every single thing there, if you want my gerber settings, here t
 
 ![Pasted image 20250929220810.png](journal/Pasted%20image%2020250929220810.png)
 
+**Now you can also use the KiCad [fabrication toolkit](https://github.com/bennymeg/Fabrication-Toolkit) to do this all for you if you're having problems, but I like to teach the whole process**
+
 And before you turn all these files into a zip, you'll want to modify the CPL file, because JLCPCB expects the CPL file headers to be called something else, so add it into google sheets. This file will be called something like **"your-project-top-pos.csv"**, we're doing one sided assembly so you can delete the bottom file. Anyways change the headers from:
 - Ref -> **Designator**
 - PosX -> **Mid X**
@@ -564,6 +566,8 @@ And now I usually make another folder called production in my root, and put this
 ![Pasted image 20250929223622.png](journal/Pasted%20image%2020250929223622.png)
 
 Now head on over to JLCPCB and drag that zip folder into the quote section. You should see your PCB show up, and the only thing you're going to add onto your order is PCBA, this just makes sure that JLCPCB doesn't just give you the raw PCB, but also assembles it:
+
+*Now you don't actually need to use PCBA, if you want to save some money, you can just buy the components on LCSC or the JLCPCB parts manager (which will probably be cheaper), but you'll need to have all the tools to assemble SMD, but I'm going to include an SMD soldering part to this tutorial too if you want to do that*
 
 ![Pasted image 20250929221835.png](journal/Pasted%20image%2020250929221835.png)
 
@@ -610,6 +614,6 @@ Now try to challenge yourself in your next endeavor, and don't just make another
 
 Feel free to also modify this board you've created to include an LED matrix, motor drivers, literally whatever your heart desires.
 
-I hope you learned alot, if you want to checkout some of the other stuff I've created, check out my projects on [GitHub](https://github.com/KaiPereira) or my personal website https://kaipereira.com/! 
+I hope you learned alot, if you want to checkout some of the other stuff I've created, check out my projects on [GitHub](https://github.com/KaiPereira) or my personal website https://kaipereira.com/! Don't forget to post your finished projects in #ship and ping me (@KaiPereira) too!
 
 Keep on hacking o7
