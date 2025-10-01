@@ -577,7 +577,7 @@ Now we need to assign the parts that JLCPCB couldn't automatically find and the 
 
 This is what my final BOM looks like, feel free to copy mine (it'll be in my GitHub repository under /PRODUCTION/files too):
 
-![Pasted image 20250930155054.png](journal/Pasted%20image%2020250930155054.png)
+![Pasted image 20250930192047.png](journal/Pasted%20image%2020250930192047.png)
 
 Now continue on, and don't place the header pins (it'll prompt you), and then you'll see your assembled board show up:
 
