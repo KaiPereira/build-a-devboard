@@ -6,7 +6,7 @@ All the source files for this tutorial can be [found here](https://github.com/Ka
 
 ![Pasted image 20250930162537.png](journal/Pasted%20image%2020250930162537.png)
 
-Now let's start off with the basic question, what's an SoC! An SoC or system on chip, basically has all the basic components like SRAM, processors, USB controllers, and other peripherals you'll break out onto your board. The RP2040 is a good starting microcontroller, because the datasheets are simple, it's low-cost, has good on-chip memory and is really flexible with plenty of IO's.
+Now let's start off with the basic question, what's an SoC! An SoC or system on chip, basically has all the basic components like SRAM, processors, USB controllers, and other peripherals you'll break out onto your board. The RP2040 is a good SoC to start with, because the datasheets are simple, it's low-cost, has good on-chip memory and is really flexible with plenty of IO's.
 
 Now let's get right into it, we'll be using KiCad for this tutorial, and I would suggest completing the hackpad tutorial and maybe a keyboard before trying to make your own devboard, not because you won't be able to make it, but you'll understand how it works a bit better.
 
@@ -31,23 +31,23 @@ So enter in your schematic, and then tap "a", this will open up the symbol libra
 
 ![Pasted image 20250925070320.png](journal/Pasted%20image%2020250925070320.png)
 ![Pasted image 20250925070335.png](journal/Pasted%20image%2020250925070335.png)
-You'll notice the symbol and actual component are 2 different things if you look at the first screenshot. The symbol just tells you all the pins on the component, and how they'll be wired to what.
+You'll notice the symbol and actual component are 2 different things if you look at the first screenshot. The symbol just tells you all the pins on the component, and how they'll be wired to what. The actual component has the physical pads where traces will actually connect to on your PCB!
 
-Our entire schematic will consist of 5 main elements: power, flash storage, the crystal oscillator, I/O (input/outputs) and a surprise element you'll be challenged to add at the end! The raspberry pi datasheet explains how all of this will pretty much be wired, and I'm kind of just here to explain exactly how it all works too.
+Our entire schematic will consist of 5 main elements: power, flash storage, the crystal oscillator, I/O (input/outputs), and your SoC, the RP2040! The Raspberry Pi datasheet explains how all of this will pretty much be wired, and I'm kind of just here to explain exactly how it all works too.
 
 So first let's talk about power and some schematic good practices!
 
 ![Pasted image 20250925071047.png](journal/Pasted%20image%2020250925071047.png)
 
-You'll notice that the RP2040 has capacitors, these are called decoupling capacitors. These capacitors are used for 2 main things, filtering out power supply noise and giving a local power supply if components need it at short notice. You can think of it like a stream of water, without the capacitors it can be jittery and unpredictable, but with the capacitors, the stream smoothens out, making your PCB function more reliable.
+You'll notice that the RP2040 has capacitors, these are called decoupling capacitors. These capacitors are used for 2 main things, filtering out power supply noise and giving a local power supply if components need it at short notice. You can think of it like a stream of water, without the capacitors it can be jittery and unpredictable, but with the capacitors, the stream smooths out, making your PCB function more reliable.
 
 You usually want to put one 0.1uF (or 100nF, the F stands for Farads) decoupling capacitor per power pin, but it's fine to deviate a bit from that, but that's the most optimal way of doing it and what we're going to do.
 
-We're also going to put a 1uF decoupling capacitor on each power line. You'll notice that the RP2040 has a +1V1 (1.1V) and a 3V3 (3.3V) line, we want to put a 1uF decoupling capacitor per line, to act as a larger reservoir and to smoothen out *larger* ripples that could occur. With the RP2040, these 1uF capacitors are mostly to help provide a stable 1.1V supply. With this combination, we'll filter out nearly all the noise and have a smooth functioning PCB.
+We're also going to put a 1uF decoupling capacitor on each power line. You'll notice that the RP2040 has a +1V1 (1.1V) and a +3V3 (3.3V) line, we want to put a 1uF decoupling capacitor per line, to act as a larger reservoir and to smoothen out *larger* ripples that could occur. With the RP2040, these 1uF capacitors are mostly to help provide a stable 1.1V supply. With this combination, we'll filter out nearly all the noise and have a smooth functioning PCB.
 
-So go back into your schematic and then tap on the "Draw Wires" icon to connect the VREF_VOUT and DVDD, and then separately connect the IO_VDD, USB_VDD, ADC_AVDD and VREG_IN, because these pins use different voltage lines.
+So go back into your schematic and then tap on the "Draw Wires" icon to connect the VREF_VOUT and DVDD, and then separately connect the IO_VDD, USB_VDD, ADC_AVDD and VREG_IN, because these pins have different voltages.
 
-**Now before we go further, remember that all power labels face UPWARDS, and all ground labels face DOWNWARDS, this isn't necessary, but it's good schematic practices that you should always follow**
+**Now before we go further, remember that all power labels face UPWARDS, and all ground labels face DOWNWARDS, this isn't necessary for the schematic to work, but it's good schematic practices that you should always follow**
 
 ![Pasted image 20250925072335.png](journal/Pasted%20image%2020250925072335.png)
 
@@ -55,9 +55,9 @@ Then tap "p" to open up the POWER symbol library (you can also tap a, but search
 
 ![Pasted image 20250925072502.png](journal/Pasted%20image%2020250925072502.png)
 
-Now schematic good practices is to always put at least a small wire between symbols like this for clarity. 
+**Now schematic good practices is to always put at least a small wire between symbols like this for clarity.** 
 
-Now that we have our power symbols in, we're going to add the decoupling. You could technically wire them like the screenshot I showed before, but I prefer to separate them because you use less wired which I find looks cleaner, but it's up to personal preference.
+Now that we have our power symbols in, we're going to add the decoupling. You could technically wire them like the screenshot I showed before, but I prefer to separate them because you use less wire which I find looks cleaner, but it's up to personal preference, and readability.
 
 You'll also notice that the symbol contains less pins than the symbol the RP2040 datasheet has, this is because symbols in KiCad tend to not repeat the same pins, so they just merge like all the same VDD pins into one.
 

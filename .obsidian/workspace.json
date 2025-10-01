@@ -184,8 +184,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "e286d62c253c0238",
+  "active": "45729f8310e64066",
   "lastOpenFiles": [
+    "PCB_DESIGN/~devboard.kicad_pro.lck",
     "JOURNAL.md~",
     "PRODUCTION/files/PRODUCTION.zip",
     "PRODUCTION/files/BOM_JLCPCB.xls",
@@ -194,7 +195,6 @@
     "PCB_DESIGN/fp-info-cachebc6ugP",
     "journal/Pasted image 20250930162537.png",
     "PCB_DESIGN/~devboard.kicad_pcb.lck",
-    "PCB_DESIGN/~devboard.kicad_pro.lck",
     "PCB_DESIGN/fp-info-cachefYP2OG",
     "PCB_DESIGN/devboard-backups/devboard-2025-09-30_162218.zip",
     "journal/Pasted image 20250930162139.png",
