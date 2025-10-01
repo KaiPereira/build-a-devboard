@@ -215,7 +215,7 @@ Next, we'll label all the other pins we haven't broken out (all the GPIO's, SWCL
 
 ![Pasted image 20250928011101.png](journal/Pasted%20image%2020250928011101.png)
 
-*I actually labelled mine the wrong direction for the rest of this tutorial, but it's purely cosmetic and won't actually impact my PCB, this is how it should actually look:*
+*I actually labelled mine the wrong direction for the rest of this tutorial, but it's purely cosmetic and won't actually impact my PCB, this is how it should actually look, don't mind the GPIO labels, I took this screenshot after being done the PCB:*
 
 ![Pasted image 20251001072358.png](journal/Pasted%20image%2020251001072358.png)
 
@@ -235,7 +235,7 @@ Next, we'll just add in all the pins, and we'll just leave out the ones we don't
 
 Now the Pi Pico can actually be powered by a battery, but we're not implementing a battery (if you want to, check out the Pi Pico datasheet), so there's a diode on the VBUS power line, so they have a VSYS line after the diode and a VBUS line before it, but because we don't need a diode, we don't need VSYS.
 
-This also means we don't need 3V3_EN, and then ADC_VREF is kind of just another thing to give a reference voltage to ADC, but it isn't really necessary, and we're just making a simple devboard so we won't use it.
+We also don't need 3V3_EN, and then ADC_VREF is kind of just another thing to give a reference voltage to ADC, but it isn't really necessary, and we're just making a simple devboard so we won't use it.
 
 Because we have these free pins, and also some GPIO's still left, let's just fill these pins with some GPIO's. I'm going to move the ADC pins up, and then fill the other pins with GPIO's. I also want to use GPIO29 which is an ADC pin and replace GPIO25 with that just so we get the added ADC pin:
 
@@ -327,7 +327,7 @@ Next, we'll align the header pins onto our PCB by using the position tool. So ri
 
 ![Pasted image 20250928225148.png](journal/Pasted%20image%2020250928225148.png)
 
-(I actually misaligned my header pins in this screenshot which I fix later, but just put J2 as the first header, and J3 as the second one, so it's easier to route)
+(I actually swapped my pin headers here which I fix later, but just put J2 as the first header, and J3 as the second one, so it's easier to route)
 
 Next, we need to put our bottom header in, these are aligned to Y **-1.61** and the X should be centered so **7.96** (10.5 is the center, minus 2.54 the pin spacing), and use the bottom left/right as reference (make sure it's flipped horizontally when aligning):
 
@@ -345,11 +345,11 @@ Now looking at the flash memory and LDO IC, they're really big, so let's use dif
 
 ![Pasted image 20250928231949.png](journal/Pasted%20image%2020250928231949.png)
 
-I'm going to switch to the MCP1700 LDO, which is smaller, but does handle less current (250ma), so if you plan on drawing more current, you might want to use a different LDO. So just replace the NCP1700 with the **MCP1700x-330xxTT**:
+I'm going to switch to the MCP1700 LDO, which is smaller, but does handle less current (250ma), so if you plan on drawing more current, you might want to just keep the current LDO. So just replace the NCP1700 with the **MCP1700x-330xxTT**, which is the 3.3V MCP1700:
 
 ![Pasted image 20250929111310.png](journal/Pasted%20image%2020250929111310.png)
 
-And then, we're going to change the flash memory to what the Pi Pico uses and has a slightly smaller package, which is the **W25Q16JVZPIQ TR** and uses the **Package_SON:Winbond_USON-8-1EP_3x2mm_P0.5mm_EP0.2x1.6mm** footprint, which isn't the exact footprint, but should work fine:
+And then, we're going to change the flash memory to what the Pi Pico uses and has a slightly smaller package, which is the **W25Q16JVZPIQ TR** and uses the **Package_SON:Winbond_USON-8-1EP_3x2mm_P0.5mm_EP0.2x1.6mm** footprint, so switch the footprint to that new one!
 
 ![Pasted image 20250929112550.png](journal/Pasted%20image%2020250929112550.png)
 
@@ -357,13 +357,13 @@ Now your footprints should be much better:
 
 ![Pasted image 20250929112732.png](journal/Pasted%20image%2020250929112732.png)
 
-Anyways next, we're going to organize our parts onto the PCB (I also fixed my header pins and MCU orientation in this step). The LDO is going to go really close to the USB-C VBUS, and the flash storage will go close to the RP2040's QSPI pins:
+Anyways next, we're going to organize our parts onto the PCB (I also fixed my header pins and MCU orientation in this step). The LDO is going to go really close to the USB-C VBUS, and the flash storage will go close to the RP2040's QSPI pins, just so we have an efficient layout:
 
 ![Pasted image 20250929113626.png](journal/Pasted%20image%2020250929113626.png)
 
-I use exact positioning when doing things like this, but you can just draw them on if you want, I just like everything to be nicely symmetrical.
+I use exact positioning when doing things like this, but you can just place them on if you want, I just like everything to be nicely symmetrical.
 
-Next, I'm going to put the crystal on. The crystal should be very close to the RP2040 XIN/XOUT pins because it's a very precise signal, and the load capacitors should be RIGHT next to the pins too. You can then just put the resistor right by the XOUT pin of the RP2040:
+Next, I'm going to put the crystal on. The crystal should be very close to the RP2040 XIN/XOUT pins because it's a very precise signal, and the load capacitors should be RIGHT next to the pins too so the signals don't get messed up. You can then just put the resistor right by the XOUT pin of the RP2040 to have a nice and efficient layout:
 
 ![Pasted image 20250929114427.png](journal/Pasted%20image%2020250929114427.png)
 
@@ -375,7 +375,7 @@ First I usually group all the caps that go together, and then I usually either s
 
 ![Pasted image 20250929120135.png](journal/Pasted%20image%2020250929120135.png)
 
-**Remember, caps go by whatever they're decoupling**. Now all the RP2040 caps are grouped together, and this is because it's just a general rule to have one cap per VDD pin, and then the larger cap/bulk cap near the group of them:
+**Remember, caps go close to whatever they're decoupling**. Now all the RP2040 caps are grouped together, and this is because it's just a general rule to have one cap per VDD pin, and then the larger cap/bulk cap near the largest group of them:
 
 ![Pasted image 20250929121131.png](journal/Pasted%20image%2020250929121131.png)
 
@@ -394,6 +394,8 @@ Now all that's left to add in, is our resistors, but I'm going to actually put t
 - Know what you're routing, things like decoupling caps need to have short, small traces, etc.
 - Never put via's on pads, this makes it hard to solder them, and makes the component unstable
 - Try to route front signals vertically, and back signals horizontally, this isn't a fixed rule, but just try to do it in most spots to have efficient routing
+- Don't be afraid to move your components a bunch while routing, a lot of intuition is required for efficient routing
+- You might hear me use the term "ratlines", these are the blue lines on the PCB, I actually have mine set as curved because of personal preference, but yours will probably be straight
 
 So, the first thing I'm going to route is my flash memory, I'm going to move the capacitors away temporarily while I do this and then add them back on later. So tap on the **route single track** in the right hand toolbar, and then route all the signals like so:
 
@@ -403,7 +405,7 @@ I usually start my route from the RP2040, and then put it into the component jus
 
 Next, I'm going to route the USB-C data lines. Now these lines are actually special on our PCB, these need to be routed as differential pairs, basically perfectly even traces, next to each other. This is because they're carrying high speed data, so the traces need to be the same length so that data arrives at the same time.
 
-The termination resistors for these data lines also need to be right by the RP2040 pins to smooth the signals. These also need to be placed perfectly evenly apart, centered on the pins so it's easy to route our differential pairs:
+The termination resistors for these data lines also need to be right by the RP2040 pins to smooth the signals. I'd suggest placing these perfectly evenly apart, centered on the pins so it's easy to route our differential pairs:
 
 ![Pasted image 20250929134841.png](journal/Pasted%20image%2020250929134841.png)
 
@@ -411,7 +413,7 @@ Now to route a differential pair. First wire the USB D+'s/D-'s together:
 
 ![Pasted image 20250929163018.png](journal/Pasted%20image%2020250929163018.png)
 
-Then, **hold** the route tracks button, and go over to the symbol with 2 traces on it, or just tap 6. Then, go over to your USB-C, and tap on one of the D+/D- pins to start the trace, and route it down to your resistors. If the traces won't go into your resistors pads, that means that your resistors aren't evenly positioned, you can just the relative positioning tool to do this. 
+Then, **hold the route tracks button**, and go over to the symbol with 2 traces on it, or just **tap 6**. Then, go over to your USB-C, and tap on one of the D+/D- pins to start the trace, and route it down to your resistors. If the traces won't go into your resistors pads, that means that your resistors aren't evenly positioned, you can just the relative positioning tool to do this. 
 
 And then you can just route the resistors nets into the RP2040 nets (Make sure they're centered so the traces are the same length, you could technically do this as a differential pair if you change your schematic slightly, but it's fine if you just position properly):
 
@@ -423,7 +425,7 @@ Now we need to make sure all these traces are the same sizes, you can check the 
 
 ![Pasted image 20250929155154.png](journal/Pasted%20image%2020250929155154.png)
 
-And then, your USB-C lines, are probably not the same length, so we need to fix that. You can do that by going to **route -> Tune skew of a differential pair** in the top menu, and then selecting the trace with a negative skew, and just tapping it, and then tapping **ok**, and it should make it slightly longer:
+And then, your USB-C lines, are probably not the same length, so we need to fix that. You can do that by going to **route -> Tune skew of a differential pair** in the top menu, and then selecting the trace with a *negative* skew, and just tapping it, and then tapping **ok**, and then just drag to make it slightly longer:
 
 ![Pasted image 20250929163336.png](journal/Pasted%20image%2020250929163336.png)
 
@@ -433,21 +435,21 @@ Now we just need to wire the extra pair of D+/D-'s on the USB-C to the route tha
 
 Now that we have our fast signals on the PCB, the other signals are fine to go through via's, so we can put in our decoupling caps now:
 
-**Leave all of the grounds for last, I'll explain this soon**
+**Leave all of the ground pins for last, I'll explain this soon**
 
 ![Pasted image 20250929161759.png](journal/Pasted%20image%2020250929161759.png)
 
-Now my routing of course isn't perfect, but I did manage to get it pretty nice and tight. You'll notice some blue on the PCB, and that's me routing on the other layer. You can change layers by tapping the other layer on the right layers view, or by tapping V. But for SMD components, you'll need what's called a VIA in order to get to the other layer, which is essentially just a hole. Feel free to use the backside for routing if you don't have any space!
+Now my routing of course isn't perfect, but I did manage to get it pretty nice and tight. You'll notice some blue on the PCB, and that's me routing on the other layer. You can change layers by tapping the other layer on the right layers view, or by **tapping "v"**. But for SMD components, you'll need what's called a **"via"** in order to get to the other layer, which is essentially just a hole that allows traces to transfer to another layer of a board. Feel free to use the backside for routing if you don't have any space!
 
-Anyways, next I'm going to route the crystal, the USB-C pulldowns, and button pull ups, and then I'm going to leave the button/button resistor for very last because there's no specific spot that needs to be:
+Anyways, next I'm going to route the crystal, the USB-C pull downs, and button pull ups, and then I'm going to leave the button/button resistor for very last because there's no specific spot that needs to be:
 
 ![Pasted image 20250929163631.png](journal/Pasted%20image%2020250929163631.png)
 
-Next, we're going to route power to our board, I'm distributing power to the main cluster of VDD pins, and then once I'm finished routing the other signals, I'm going to route it to the other pins, just so power is even about my board:
+Now, we're going to route power to our board, I'm distributing power to the main cluster of VDD pins, and then once I'm finished routing the other signals, I'm going to route it to the other pins, just so power is even about my board:
 
 ![Pasted image 20250929164321.png](journal/Pasted%20image%2020250929164321.png)
 
-Now, wire every single header pin on the board, try to keep organized when doing this, and save via's/the other layer for last:
+Now, wire every single header pin on the board, try to keep organized when doing this, and save via's/the other layer for when you have like absolutely no space left:
 
 ![Pasted image 20250929165330.png](journal/Pasted%20image%2020250929165330.png)
 
@@ -455,17 +457,17 @@ Now, wire every single header pin on the board, try to keep organized when doing
 
 And with a bit of finesse, all of our routing is pretty much done, we just have all of our ground signals left. Now you're probably wondering why we didn't route those. Well instead of using wires to do those, we can use what's called a ground fill.
 
-This is basically like a giant pool of just ground on our PCB that connects all of our grounds together. We do this because it helps with signal integrity, and because there's always going to be a lot of ground signals on a PCB. It also helps with thermal regulation!
+This is basically like a giant pool of just ground on our PCB that connects all of our grounds together. We do this because it helps with signal integrity, and because there's always going to be a lot of ground signals on a PCB so it simplifies stuff. It also helps with thermal regulation!
 
 So on the right toolbar, tap **Draw Filled Zone**, and select both layers, with GND as the net, and select *Thermal reliefs* as the Pad connections. Basically, with a ground fill, soldering can become harder because the fill dissipates heat, so doing thermal reliefs puts like less ground area to the hole so it's easier to solder stuff on!
 
 ![Pasted image 20250929171108.png](journal/Pasted%20image%2020250929171108.png)
 
-Then, select the entire PCB with your ground fill, and then tap B to fill it:
+Then, select the entire PCB with your ground fill, and then **tap "B"** to fill it:
 
 ![Pasted image 20250929171800.png](journal/Pasted%20image%2020250929171800.png)
 
-Now you'll notice that all your ground ratliness disappear. Their might be a couple that are still there though, this is because the pads are isolated, so you might need to put a via from the pad onto the ground fill. You also might need to adjust like some of the header pins signals and such to make it work!
+Now you'll notice that all your ground ratlines disappear. Their might be a couple that are still there though, this is because the pads are isolated, so you might need to put a via from the pad onto the ground fill. You also might need to adjust like some of the header pins signals and such to make it work!
 
 I'd also suggest adding via's to all the isolated islands of ground for signal integrity, but this is just good practice, and also putting extra near the SoC and stuff that get's hot like the LDO:
 
@@ -479,11 +481,11 @@ And then, if you just have any ratlines still on the PCB, just connect them up, 
 
 ![Pasted image 20250929204855.png](journal/Pasted%20image%2020250929204855.png)
 
-Now you probably think, we'll we're done the PCB, what else could there be, well there's actually a couple more things we need to do. The first thing is running DRC to make sure there's no problems with our PCB. So go to the top toolbar, and run DRC:
+Now you probably think, we'll we're done the PCB, what else could there be, well there's actually a couple more things we need to do. The first thing is running DRC to make sure there's no problems with our PCB. **So go to the top toolbar, and run DRC**:
 
 ![Pasted image 20250929205046.png](journal/Pasted%20image%2020250929205046.png)
 
-My PCB has 16 errors, yours might have more, but all of these need to be properly resolved. The first things I'm going to look at is my unconnected items. These just tell me what I forgot to route, so make sure that you get all those fixed first.
+My PCB has 16 errors, yours might have more, but all of these need to be properly resolved. The first things I'm going to look at is my unconnected items. These just tell me what I forgot to route, you can just tap on them to see where they are, just make sure you get all those routed before continuing.
 
 Most of these are problems with the ground pour, so I'm actually going to modify the ground fill to fix a lot of these errors, I'm changing the thermal relief gap and clearance to 0.3mm instead of 0.5mm which just makes it so the traces and pads can be closer to the fill:
 
