@@ -71,13 +71,13 @@ These are the decoupling capacitors for the 3.3V line, now we need to do the cap
 
 ![Pasted image 20250925103109.png](journal/Pasted%20image%2020250925103109.png)
 
-Now we have all of our power decoupling. We also need to connect GND to the SoC, this is pretty self-explanatory, but it allows power to actually flow properly.
+Now we have all of our power decoupling. We also need to connect GND to the SoC, this is pretty self-explanatory, but it allows power to actually flow properly in our PCB.
 
 ![Pasted image 20250925103224.png](journal/Pasted%20image%2020250925103224.png)
 
 ## Working on USB-C
 
-We have our power decoupling, but we don't actually have a power source yet or a way to program our devboard yet, so let's do that now. I'm going to be using USB-C because it's standard, fast and I kind of want to add a motor driver to my board for fun!
+We have our power decoupling, but we don't actually have a power source yet or a way to program our devboard yet, so let's do that now. I'm going to be using USB-C because it's standard and fast!
 
 So tap "a", type in whatever receptacle you want, and add it in. Make sure you pick "receptacle" and not plug because a plug would plug into your laptop instead of having a cable plug into it.
 
@@ -108,7 +108,7 @@ Next, pulldown the CC pins through a 5.1K resistor to GND to enable power to go 
 
 Now we just need to wire in the input voltage, but the thing is, the voltage of USB-C is 5V, while the voltage that the RP2040 uses as input, needs to be 3.3V so you don't cook it. To achieve this, we'll use what's called an LDO, or a Low-Dropout Regulator to take the voltage down.
 
-Specifically, we'll be using the **NCP1117**, a classic and reliable *fixed* voltage regulator. A fixed voltage regulator is handy here, because we only need to go down to 3.3V instead of like 1.5V per say or something random, and it uses less components. We'll also be using the SOT-223 footprint (or package is the common term) because it's small and we don't really have any thermal issues with a devboard.
+Specifically, we'll be using the **NCP1117**, a classic and reliable *fixed* voltage regulator **(I actually switch this regulator out later for the MCP1700, 3.3V, because it's really big on our PCB)**. A fixed voltage regulator is handy here, because we only need to go down to 3.3V instead of like 1.5V per say or something random, and it uses less components. We'll also be using the SOT-223 footprint (or package is the common term) because it's small and we don't really have any thermal issues with a devboard.
 
 So add in the **NCP1117-3.3_SOT223** symbol, wire GND and attach VBUS to the VI (voltage input) of the LDO.
 
@@ -136,9 +136,9 @@ Now USB D+ and D- are actually what's called "bidirectional", this means that th
 
 ## The crystal oscillator
 
-Now to make our USB and other peripherals actually work properly, we need to have what's called a clock oscillator. This is a little piezoelectric quartz crystal that vibrates very precisely, and then it's amplified and fed into the MCU to act as a clock signal that controls the digital peripherals.
+Now to make our USB and other peripherals actually work properly, we need to have what's called a crystal oscillator. This is a little piezoelectric quartz crystal that vibrates very precisely, and then it's amplified and fed into the MCU to act as a clock signal that controls the digital peripherals.
 
-For example, you definitely want a crystal oscillator if you're using USB-C, because the data needs to come in at specific times, so it makes sure no data is incorrectly received. Because the clock is such a precise component, you want to wire it really carefully. That means it should be as close to the MCU as possible on the PCB (schematic doesn't matter, it's just a reference), and it needs really small capacitors, to smooth tiny voltage ripples that could affect the signals.
+For example, you definitely want a crystal oscillator if you're using USB-C, because the data needs to come in at specific times, so it makes sure no data is incorrectly received. Because the clock is such a precise component, you want to wire it really carefully. That means it should be as close to the MCU as possible on the PCB (schematic doesn't matter, it's just a reference), and it needs really small capacitors, to smooth out the signals.
 
 First add the global labels to the MCU XIN and XOUT, just called their relative name. XOUT is the output from the crystal so an input to the MCU, and XIN is an output from the MCU to help the crystal oscillate properly:
 
@@ -146,7 +146,7 @@ First add the global labels to the MCU XIN and XOUT, just called their relative 
 
 Remember to accurately represent your global label direction, but just keep in mind it doesn't actually change your schematic, it's only for whoever is reading it!
 
-Based off the RP2040 datasheet, we're going to be using a 12 MHz crystal with two, 15pF decoupling capacitors. **Make sure to use the crystal footprint with 4 pins and 1 and 3, as the input/output pins so pay attention to the symbol I use**:
+Based off the RP2040 datasheet, we're going to be using a 12 MHz crystal with two, 15pF (I switch these later to 33pF because we use a different crystal than the Pi Pico) decoupling capacitors. **Make sure to use the crystal footprint with 4 pins and 1 and 3, as the input/output pins so pay attention to the symbol I use**:
 
 ![Pasted image 20250926063705.png](journal/Pasted%20image%2020250926063705.png)
 
@@ -214,6 +214,10 @@ But before we do this, let's just make sure we attach TESTEN to GND on the RP204
 Next, we'll label all the other pins we haven't broken out (all the GPIO's, SWCLK and SWD), with their relative name on the RP2040. These are all bidirectional pins except the SWCLK pin, which is a clock output from the SoC:
 
 ![Pasted image 20250928011101.png](journal/Pasted%20image%2020250928011101.png)
+
+*I actually labelled mine the wrong direction for the rest of this tutorial, but it's purely cosmetic and won't actually impact my PCB, this is how it should actually look:*
+
+![Pasted image 20251001072358.png](journal/Pasted%20image%2020251001072358.png)
 
 Next, we're going to add the actual header pin symbols into our schematic. You can technically do this whoever you want, but I'm going to adhere to the raspberry Pi Pico pinout:
 

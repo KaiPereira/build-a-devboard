@@ -6500,7 +6500,7 @@
 		)
 	)
 	(global_label "SWD"
-		(shape output)
+		(shape bidirectional)
 		(at 137.16 132.08 180)
 		(fields_autoplaced yes)
 		(effects
@@ -6511,7 +6511,7 @@
 		)
 		(uuid "3946294d-764b-4da1-b385-af6fd38145ca")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.2439 132.08 0)
+			(at 129.1326 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7534,7 +7534,7 @@
 		)
 	)
 	(global_label "SWCLK"
-		(shape bidirectional)
+		(shape output)
 		(at 137.16 129.54 180)
 		(fields_autoplaced yes)
 		(effects
@@ -7545,7 +7545,7 @@
 		)
 		(uuid "be052ecd-d417-46dc-aa1c-4db33fb6a7a5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 126.8345 129.54 0)
+			(at 127.9458 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
