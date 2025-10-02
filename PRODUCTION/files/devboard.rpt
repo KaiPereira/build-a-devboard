@@ -1,12 +1,12 @@
-## Footprint report - date 2025-09-29T22:09:00-0700
+## Footprint report - date 2025-10-01T17:02:19-0700
 ## Created by KiCad version 9.0.3-9.0.3-0~ubuntu24.04.1
 ## Unit = mm, Angle = deg.
 
 $BeginDESCRIPTION
 
 $BOARD
-upper_left_corner 142.850000 82.075000
-lower_right_corner 163.900000 133.125000
+upper_left_corner 142.690000 80.425000
+lower_right_corner 164.060000 133.525000
 $EndBOARD
 
 $MODULE C1
@@ -335,6 +335,13 @@ $EndMODULE  C17
 $MODULE G***
 footprint LOGO
 attribut virtual
+position 153.300000 122.100000  orientation 180.00
+layer back
+$EndMODULE  G***
+
+$MODULE G***
+footprint LOGO
+attribut virtual
 position 153.400000 98.300000  orientation 90.00
 layer back
 $EndMODULE  G***
@@ -351,13 +358,6 @@ footprint LOGO
 attribut virtual
 position 153.800000 127.200000  orientation 0.00
 layer front
-$EndMODULE  G***
-
-$MODULE G***
-footprint LOGO
-attribut virtual
-position 153.300000 122.100000  orientation 180.00
-layer back
 $EndMODULE  G***
 
 $MODULE J1
