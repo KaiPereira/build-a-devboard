@@ -634,6 +634,7 @@ You'll also want to have a couple other key components:
 - Brass sponge, for cleaning your tip, you just dip your iron into this every once in a while to get the excess solder off!
 - Silicon mat, this isn't needed, but I would HIGHLY suggest, so that your soldering iron doesn't fall off and burn you, and so you have a nice grippy surface to hold your PCB on
 - Decently ventilated area, honestly I find this is less for saving you from the unhealthy fumes and more to get the smoke out of your eyes so you actually see what you're doing!
+- Isopropyl alcohol and Q-Tips, these are to clean up the flux on your board after soldering, it's just once you're done, so you don't really have to have it on hand before starting!
 
 This is what my setup looks like with all of these things:
 
@@ -643,4 +644,33 @@ This is what my setup looks like with all of these things:
 
 Now you're ready to get soldering!
 
+When you're soldering a small board like this, and most PCB's for that matter, you'll want to start with your smallest components first and then work your way up. In our case, we have quite a few 0402 components, which are going to be SO MUCH FUN to solder.
 
+Lots of people don't spend time to actually learn how to properly solder these components and just go at it, but I'll try my best to describe it and you'll also want to [watch this video](https://www.youtube.com/watch?v=EW9Y8rDm4kE) in it's entirety!
+
+So basically:
+- Apply your flux around/in the pads of the footprint of the components you're going to solder
+- Apply solder to one pad of the footprint
+- Place your component onto the footprint
+- Apply heat on the pad with solder while it's touching your component
+- Take your tweezers off the component
+- Apply heat to the other pad, and solder it to the component
+- Apply more solder to the pad you first soldered to create a stronger connection
+
+And then you're done! I sometimes add some more flux and then clean up my joints, but it's up to you if you want to do so! This will be hard when you first start off, but it get's much easier with practice, and also better tools help a lot!
+
+Now you want to pay close attention to your joints, to make sure that your solder is actually joined with the component! I find being in a WELL lit room helps a lot to see everything, and a microscope can be very handy!
+
+If your component didn't form a joint with one of it's pads, you might need to get the component closer to the pad or apply flux, or apply more solder!
+
+If you ever bridge 2 pads with solder, apply flux and they should go back to their relevant pads, it's MAGICAL....
+
+Tutorials help a LOT here where words sometimes can't explain all, so take your time, and do it right.
+
+I started by soldering my 0.1uF caps, because there's quite a few of them, but you could really start with whatever 0402 component you want, and then work your way up to 0603, then 0805, and then small components, then large components!
+
+Here's my very first passive soldered onto my board:
+
+![[Pasted image 20251026155232.png]]
+
+Yes, it's SMALL, and takes lots of time. If you're currently working on this, shoot me a DM on slack **@KaiPereira**, I'd love to see how you're doing!
