@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#ship",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -170,29 +170,29 @@
       "bases:Create new base": false
     }
   },
-  "active": "6efa8c1c22593d85",
+  "active": "45729f8310e64066",
   "lastOpenFiles": [
     "JOURNAL.md~",
-    "PCB_DESIGN/devboard-backups/devboard-2025-10-01_072401.zip",
+    "journal/Pasted image 20251026153701.png",
+    "Pasted image 20251026153701.png",
+    "2025-10-26.md",
+    "JOURNAL.md",
+    "journal/Pasted Image 20250828221119_184.png",
     "journal/Pasted image 20251001072358.png",
+    "journal/Pasted image 20250930192047.png",
+    "journal/Pasted image 20250930162537.png",
+    "journal/Pasted image 20250930162139.png",
+    "journal/Pasted image 20250930162101.png",
+    "journal/Pasted image 20250930161129.png",
+    "journal/Pasted image 20250930161046.png",
+    "PCB_DESIGN/devboard-backups/devboard-2025-10-01_072401.zip",
     "PCB_DESIGN/~devboard.kicad_sch.lck",
     "PCB_DESIGN/~devboard.kicad_pro.lck",
     "PRODUCTION/files/PRODUCTION.zip",
     "PRODUCTION/files/BOM_JLCPCB.xls",
     "PRODUCTION/files/BOM-JLCPCB Assembly Order.xls",
-    "journal/Pasted image 20250930192047.png",
     "PCB_DESIGN/fp-info-cachebc6ugP",
-    "journal/Pasted image 20250930162537.png",
     "PCB_DESIGN/~devboard.kicad_pcb.lck",
-    "PCB_DESIGN/fp-info-cachefYP2OG",
-    "PCB_DESIGN/devboard-backups/devboard-2025-09-30_162218.zip",
-    "journal/Pasted image 20250930162139.png",
-    "journal/Pasted image 20250930162101.png",
-    "journal/Pasted image 20250930161129.png",
-    "journal/Pasted image 20250930161046.png",
-    "journal/Pasted image 20250930155306.png",
-    "journal/Pasted image 20250930155054.png",
-    "journal/Pasted image 20250930154715.png",
-    "JOURNAL.md"
+    "PCB_DESIGN/fp-info-cachefYP2OG"
   ]
 }
