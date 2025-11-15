@@ -2,7 +2,7 @@
 
 This repository contains the source files and the tutorial for building an RP2040 devboard.
 
-Checkout the entire tutorial [here](https://kaipereira.com/build-a-devboard)!
+Checkout the entire tutorial [here]([https://kaipereira.com/build-a-devboard](https://kaipereira.com/journal/build-a-devboard))!
 
 ![Pasted image 20250930162537.png](journal/Pasted%20image%2020250930162537.png)
 
