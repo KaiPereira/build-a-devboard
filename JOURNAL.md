@@ -674,3 +674,5 @@ Here's my very first passive soldered onto my board:
 ![Pasted image 20251026155232.png](journal/Pasted%20image%2020251026155232.png)
 
 Yes, it's SMALL, and takes lots of time. If you're currently working on this, shoot me a DM on slack **@KaiPereira**, I'd love to see how you're doing!
+
+(unfinished)
